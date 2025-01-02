@@ -3,7 +3,6 @@ import { Box, ThemeProvider } from "@mui/material";
 import Landing from "./Landing";
 
 const App = () => {
-  console.log("theme", theme);
   return (
     <ThemeProvider theme={theme}>
       <Box
