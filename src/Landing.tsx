@@ -6,7 +6,14 @@ const Landing = () => {
   const theme = useTheme();
 
   return (
-    <Stack alignSelf="center" mt={8} spacing={6}>
+    <Stack
+      alignSelf="center"
+      py={8}
+      spacing={6}
+      sx={{
+        background: `linear-gradient(to bottom, ${theme.palette.primary.dark},  ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
+      }}
+    >
       <Stack>
         <Typography variant="h5" textAlign="center" letterSpacing={4}>
           blue rose studios
@@ -21,7 +28,12 @@ const Landing = () => {
         <img
           src={lolaCover}
           alt="Lola and the Lost Ring"
-          style={{ height: "50vh", objectFit: "contain", borderRadius: 6 }}
+          style={{
+            height: "50vh",
+            objectFit: "contain",
+            borderRadius: 6,
+            boxShadow: `0px 0px 20px 12px ${theme.palette.secondary.light}`,
+          }}
         />
       </Box>
 
@@ -48,7 +60,7 @@ const Landing = () => {
           size="large"
           endIcon={<ArrowRightAltRounded />}
           style={{
-            background: `linear-gradient(to right bottom, ${theme.palette.secondary.dark} 30%, ${theme.palette.primary.light})`,
+            background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 30%, ${theme.palette.primary.light})`,
           }}
         >
           Play Games
