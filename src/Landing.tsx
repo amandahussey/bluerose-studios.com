@@ -2,6 +2,8 @@ import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
 import lolaCover from "/lola-cover.png";
 import { ArrowRightAltRounded } from "@mui/icons-material";
 
+import "./Landing.css";
+
 const Landing = () => {
   const theme = useTheme();
 
@@ -11,7 +13,7 @@ const Landing = () => {
       py={8}
       spacing={6}
       sx={{
-        background: `linear-gradient(to bottom, ${theme.palette.primary.dark},  ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
+        background: `linear-gradient(to bottom, ${theme.palette.primary.dark} 25%,  ${theme.palette.secondary.dark} 75%, ${theme.palette.primary.dark})`,
       }}
     >
       <Stack>
@@ -33,8 +35,18 @@ const Landing = () => {
             objectFit: "contain",
             borderRadius: 6,
             boxShadow: `0px 0px 20px 12px ${theme.palette.secondary.light}`,
+            transform: "translateX(50%)",
+            position: "relative",
+            zIndex: 99,
           }}
         />
+        <div className="shelf">
+          <div className="top"></div>
+          <div className="front"></div>
+          <div className="back"></div>
+          <div className="left-side"></div>
+          <div className="right-side"></div>
+        </div>
       </Box>
 
       <Stack
