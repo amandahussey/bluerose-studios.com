@@ -11,8 +11,16 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["American Typewriter", "Helvetica", "Arial", "serif"].join(
-      ","
-    ),
+    fontFamily: ["Comic Neue", "Helvetica", "Arial", "serif"].join(","),
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none", // removes the uppercase transformation,
+          fontWeight: "bold",
+        },
+      },
+    },
   },
 });
