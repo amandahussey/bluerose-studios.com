@@ -11,10 +11,10 @@ const Landing = () => {
         style={{ height: "50vh", objectFit: "contain" }}
       />
       <Typography variant="h3" textAlign="center" letterSpacing={4} mt={4}>
-        blue rose
+        blue rose studios
       </Typography>
       <Typography variant="h6" textAlign="center" letterSpacing={9} mt={1}>
-        studios
+        presents
       </Typography>
     </Stack>
   );

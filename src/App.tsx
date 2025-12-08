@@ -1,6 +1,7 @@
 import { theme } from "./theme";
 import { Box, ThemeProvider } from "@mui/material";
 import Landing from "./Landing";
+import Nav from "./Nav";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           color: theme.palette.text.primary,
         }}
       >
+        <Nav />
         <Landing />
       </Box>
     </ThemeProvider>
