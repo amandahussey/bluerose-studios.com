@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Link } from "@mui/material";
+import { Link, useMediaQuery } from "@mui/material";
 
 import bluerose from "/blue-rose.png";
 
@@ -27,6 +27,8 @@ function Nav() {
     setAnchorElNav(null);
   };
 
+  const shouldShowMobileTopText = useMediaQuery("(min-width:515px)");
+
   return (
     <Container maxWidth="xl">
       <Toolbar disableGutters>
@@ -43,7 +45,6 @@ function Nav() {
             />
           </Link>
         </Box>
-
         <Typography
           variant="h6"
           noWrap
@@ -61,7 +62,6 @@ function Nav() {
         >
           blue rose studios
         </Typography>
-
         {/* Mobile */}
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <IconButton
@@ -124,7 +124,7 @@ function Nav() {
             textDecoration: "none",
           }}
         >
-          blue rose studios
+          {shouldShowMobileTopText ? "blue rose studios" : ""}
         </Typography>
         <Box
           sx={{
