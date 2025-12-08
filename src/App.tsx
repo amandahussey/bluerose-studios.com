@@ -9,7 +9,7 @@ const App = () => {
       <Box
         minHeight="100vh"
         style={{
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: theme.palette.primary.dark,
           color: theme.palette.text.primary,
         }}
       >

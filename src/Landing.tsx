@@ -36,7 +36,7 @@ const Landing = () => {
           // href="/books/lola"
           size="large"
           style={{
-            background: `linear-gradient(to right, ${theme.palette.secondary.light}, ${theme.palette.secondary.dark})`,
+            background: `linear-gradient(to right, ${theme.palette.secondary.light} 5%, ${theme.palette.secondary.main})`,
           }}
         >
           Read About the Book
@@ -48,7 +48,7 @@ const Landing = () => {
           size="large"
           endIcon={<ArrowRightAltRounded />}
           style={{
-            background: `linear-gradient(to right bottom, ${theme.palette.secondary.dark}, ${theme.palette.primary.light})`,
+            background: `linear-gradient(to right bottom, ${theme.palette.secondary.dark} 30%, ${theme.palette.primary.light})`,
           }}
         >
           Play Games

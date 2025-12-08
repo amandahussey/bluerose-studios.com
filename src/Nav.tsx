@@ -13,7 +13,7 @@ import { Link } from "@mui/material";
 
 import bluerose from "/blue-rose.png";
 
-const pages = ["Lola", "Games", "About"];
+const pages = ["Books", "Games", "About"];
 
 function Nav() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -30,7 +30,7 @@ function Nav() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ bgcolor: "primary.main" }}>
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Link href="/">
