@@ -1,5 +1,4 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -29,77 +28,10 @@ function Nav() {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "primary.dark" }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Link href="/">
-              <img
-                src={bluerose}
-                alt="blue rose"
-                style={{
-                  height: 50,
-                  objectFit: "contain",
-                  padding: 12,
-                }}
-              />
-            </Link>
-          </Box>
-
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            blue rose studios
-          </Typography>
-
-          {/* Mobile */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+    <Container maxWidth="xl">
+      <Toolbar disableGutters>
+        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Link href="/">
             <img
               src={bluerose}
               alt="blue rose"
@@ -109,45 +41,110 @@ function Nav() {
                 padding: 12,
               }}
             />
-          </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
+          </Link>
+        </Box>
+
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="/"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          blue rose studios
+        </Typography>
+
+        {/* Mobile */}
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
           >
-            blue rose studios
-          </Typography>
-          <Box
-            sx={{
-              flexGrow: 1,
-              justifyContent: "flex-end",
-              display: { xs: "none", md: "flex" },
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
             }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{ display: { xs: "block", md: "none" } }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+              <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+              </MenuItem>
             ))}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+          </Menu>
+        </Box>
+        <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <img
+            src={bluerose}
+            alt="blue rose"
+            style={{
+              height: 50,
+              objectFit: "contain",
+              padding: 12,
+            }}
+          />
+        </Box>
+        <Typography
+          variant="h5"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: { xs: "flex", md: "none" },
+            flexGrow: 1,
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          blue rose studios
+        </Typography>
+        <Box
+          sx={{
+            flexGrow: 1,
+            justifyContent: "flex-end",
+            display: { xs: "none", md: "flex" },
+          }}
+        >
+          {pages.map((page) => (
+            <Button
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              {page}
+            </Button>
+          ))}
+        </Box>
+      </Toolbar>
+    </Container>
   );
 }
 export default Nav;
