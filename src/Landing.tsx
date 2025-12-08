@@ -12,7 +12,8 @@ const Landing = () => {
   return (
     <Stack
       alignSelf="center"
-      py={8}
+      pt={{ xs: 0, md: 8 }}
+      pb={8}
       spacing={8}
       sx={{
         background: `linear-gradient(to bottom, ${theme.palette.primary.dark} 25%,  ${theme.palette.secondary.dark} 75%, ${theme.palette.primary.dark})`,
