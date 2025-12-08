@@ -1,16 +1,13 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
 import lolaCover from "/lola-cover.png";
 import { ArrowRightAltRounded } from "@mui/icons-material";
 
 const Landing = () => {
+  const theme = useTheme();
+
   return (
     <Stack alignSelf="center" mt={8} spacing={6}>
       <Stack>
-        {/* <img
-          src={bluerose}
-          alt="blue rose"
-          style={{ height: 30, objectFit: "contain" }}
-        /> */}
         <Typography variant="h5" textAlign="center" letterSpacing={4}>
           blue rose studios
         </Typography>
@@ -28,13 +25,18 @@ const Landing = () => {
         />
       </Box>
 
-      <Stack direction="row" justifyContent="center" spacing={4}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        justifyContent="center"
+        alignItems="center"
+        spacing={4}
+      >
         <Button
           variant="contained"
           // href="/books/lola"
           size="large"
           style={{
-            background: "linear-gradient(to right bottom, #430089, #82ffa1)",
+            background: `linear-gradient(to right, ${theme.palette.secondary.light}, ${theme.palette.secondary.dark})`,
           }}
         >
           Read About the Book
@@ -46,7 +48,7 @@ const Landing = () => {
           size="large"
           endIcon={<ArrowRightAltRounded />}
           style={{
-            background: "linear-gradient(to right bottom, #430089, #82ffa1)",
+            background: `linear-gradient(to right bottom, ${theme.palette.secondary.dark}, ${theme.palette.primary.light})`,
           }}
         >
           Play Games
