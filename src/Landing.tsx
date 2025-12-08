@@ -17,11 +17,20 @@ const Landing = () => {
       }}
     >
       <Stack>
-        <Typography variant="h5" textAlign="center" letterSpacing={4}>
+        <Typography
+          variant="h5"
+          textAlign="center"
+          letterSpacing={4}
+          fontFamily="American Typewriter"
+        >
           blue rose studios
         </Typography>
-
-        <Typography variant="h6" textAlign="center" letterSpacing={9}>
+        <Typography
+          variant="h6"
+          textAlign="center"
+          letterSpacing={9}
+          fontFamily="American Typewriter"
+        >
           presents
         </Typography>
       </Stack>
