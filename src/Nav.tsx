@@ -29,8 +29,8 @@ function Nav() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl" sx={{ bgcolor: "primary.main" }}>
+    <AppBar position="static" sx={{ bgcolor: "primary.dark" }}>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Link href="/">
