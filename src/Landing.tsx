@@ -11,7 +11,7 @@ const Landing = () => {
     <Stack
       alignSelf="center"
       py={8}
-      spacing={6}
+      spacing={8}
       sx={{
         background: `linear-gradient(to bottom, ${theme.palette.primary.dark} 25%,  ${theme.palette.secondary.dark} 75%, ${theme.palette.primary.dark})`,
       }}
@@ -26,28 +26,31 @@ const Landing = () => {
         </Typography>
       </Stack>
 
-      <Box alignSelf="center">
-        <img
-          src={lolaCover}
-          alt="Lola and the Lost Ring"
-          style={{
-            height: "50vh",
-            objectFit: "contain",
-            borderRadius: 6,
-            boxShadow: `0px 0px 20px 12px ${theme.palette.secondary.light}`,
-            transform: "translateX(50%)",
-            position: "relative",
-            zIndex: 99,
-          }}
-        />
-        <div className="shelf">
-          <div className="top"></div>
-          <div className="front"></div>
-          <div className="back"></div>
-          <div className="left-side"></div>
-          <div className="right-side"></div>
-        </div>
-      </Box>
+      <Stack>
+        <Box alignSelf="center">
+          <img
+            src={lolaCover}
+            alt="Lola and the Lost Ring"
+            style={{
+              height: "50vh",
+              objectFit: "contain",
+              borderRadius: 6,
+              boxShadow: `0px 0px 50px 6px ${theme.palette.secondary.light}`,
+              position: "relative",
+              zIndex: 99,
+            }}
+          />
+        </Box>
+        <Box sx={{ display: { xs: "none", md: "block" } }}>
+          <div className="shelf">
+            <div className="top"></div>
+            <div className="front"></div>
+            <div className="back"></div>
+            <div className="left-side"></div>
+            <div className="right-side"></div>
+          </div>
+        </Box>
+      </Stack>
 
       <Stack
         direction={{ xs: "column", sm: "row" }}
