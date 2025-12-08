@@ -2,6 +2,8 @@ import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
 import lolaCover from "/lola-cover.png";
 import { ArrowRightAltRounded } from "@mui/icons-material";
 
+import bluerose from "/blue-rose.png";
+
 import "./Landing.css";
 
 const Landing = () => {
@@ -17,6 +19,17 @@ const Landing = () => {
       }}
     >
       <Stack>
+        <Box sx={{ display: { xs: "flex", md: "none" }, alignSelf: "center" }}>
+          <img
+            src={bluerose}
+            alt="blue rose"
+            style={{
+              height: 50,
+              objectFit: "contain",
+              padding: 12,
+            }}
+          />
+        </Box>
         <Typography
           variant="h5"
           textAlign="center"

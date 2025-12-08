@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, useMediaQuery } from "@mui/material";
+import { Link } from "@mui/material";
 
 import bluerose from "/blue-rose.png";
 
@@ -26,8 +26,6 @@ function Nav() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  const shouldShowMobileTopText = useMediaQuery("(min-width:515px)");
 
   return (
     <Container maxWidth="xl">
@@ -97,35 +95,6 @@ function Nav() {
             ))}
           </Menu>
         </Box>
-        <Box sx={{ display: { xs: "flex", md: "none" } }}>
-          <img
-            src={bluerose}
-            alt="blue rose"
-            style={{
-              height: 50,
-              objectFit: "contain",
-              padding: 12,
-            }}
-          />
-        </Box>
-        <Typography
-          variant="h5"
-          noWrap
-          component="a"
-          href="#app-bar-with-responsive-menu"
-          sx={{
-            mr: 2,
-            display: { xs: "flex", md: "none" },
-            flexGrow: 1,
-            fontFamily: "American Typewriter",
-            fontWeight: 400,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
-          {shouldShowMobileTopText ? "blue rose studios" : ""}
-        </Typography>
         <Box
           sx={{
             flexGrow: 1,
