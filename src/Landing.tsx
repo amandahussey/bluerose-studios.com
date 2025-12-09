@@ -43,22 +43,26 @@ const Landing = () => {
             src={bluerose}
             alt="blue rose"
             style={{
-              height: 50,
+              height: 80,
               objectFit: "contain",
               padding: 12,
             }}
           />
         </Box>
 
-        <Box position="relative" alignSelf="center">
+        <Box
+          position="relative"
+          alignSelf="center"
+          display={isMd ? "block" : "none"}
+        >
           <img
             src={sparkle1}
             style={{
               height: 14,
               objectFit: "contain",
               position: "relative",
-              bottom: !isMd ? 10 : 20,
-              left: !isMd ? 30 : 100,
+              bottom: 20,
+              left: 100,
             }}
           />
         </Box>
@@ -104,6 +108,16 @@ const Landing = () => {
             </Typography>
           </Stack>
 
+          <img
+            src={sparkle1}
+            style={{
+              height: 14,
+              objectFit: "contain",
+              position: "relative",
+              top: 72,
+              right: 32,
+            }}
+          />
           <img
             src={sparkle1}
             style={{
