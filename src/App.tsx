@@ -11,6 +11,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Stack
         minHeight="100vh"
+        width="100%"
         style={{
           backgroundColor: theme.palette.primary.dark,
           color: theme.palette.text.primary,
