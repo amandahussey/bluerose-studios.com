@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Stack,
   Typography,
@@ -8,9 +7,6 @@ import {
   Container,
 } from "@mui/material";
 import lolaCover from "/lola-cover.png";
-
-import sparkle1 from "/sparkle-1.png";
-import sparkle2 from "/sparkle-2.png";
 
 const AboutLola = () => {
   const theme = useTheme();
@@ -22,6 +18,7 @@ const AboutLola = () => {
       p={isSm ? 4 : 8}
       pb={8}
       flexGrow={1}
+      justifyContent="center"
       style={{
         background: `linear-gradient(to bottom, ${theme.palette.primary.dark} 5%, ${theme.palette.secondary.main})`,
       }}
