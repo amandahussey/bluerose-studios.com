@@ -175,6 +175,7 @@ const Landing = () => {
             alt="Lola and the Lost Ring"
             style={{
               height: "50vh",
+              maxHeight: 400,
               objectFit: "contain",
               borderRadius: 6,
               boxShadow: `0px 0px 50px 6px ${theme.palette.secondary.light}`,
