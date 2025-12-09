@@ -12,19 +12,16 @@ import { Link } from "@mui/material";
 
 import bluerose from "/blue-rose.png";
 
-const pages = ["Books", "Games", "About"];
-
 function Nav() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+  const [anchorElBooks, setAnchorElBooks] = React.useState<null | HTMLElement>(
     null
   );
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElBooks(event.currentTarget);
   };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleCloseBooksMenu = () => {
+    setAnchorElBooks(null);
   };
 
   return (
@@ -60,58 +57,42 @@ function Nav() {
         >
           blue rose studios
         </Typography>
-        {/* Mobile */}
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } }}>
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-            color="inherit"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{ display: { xs: "block", sm: "none" } }}
-          >
-            {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
-        <Box
-          sx={{
-            flexGrow: 1,
-            justifyContent: "flex-end",
-            display: { xs: "none", sm: "flex" },
-          }}
+
+        {/* Books Menu */}
+        <Button
+          onClick={handleOpenUserMenu}
+          sx={{ my: 2, color: "white", display: "block" }}
+          aria-controls="menu-books"
         >
-          {pages.map((page) => (
-            <Button
-              key={page}
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              {page}
-            </Button>
-          ))}
-        </Box>
+          Books
+        </Button>
+        <Menu
+          sx={{ mt: "45px" }}
+          id="menu-books"
+          anchorEl={anchorElBooks}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          open={Boolean(anchorElBooks)}
+          onClose={handleCloseBooksMenu}
+        >
+          <MenuItem
+            onClick={handleCloseBooksMenu}
+            component="a"
+            href="#/books/lola"
+          >
+            <Typography>Lola and the Lost Ring</Typography>
+          </MenuItem>
+          <MenuItem disabled aria-disabled>
+            <Typography>Stay tuned for more!</Typography>
+          </MenuItem>
+        </Menu>
       </Toolbar>
     </Container>
   );
