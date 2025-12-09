@@ -52,9 +52,9 @@ const AboutLola = () => {
                   </Typography>
                 ) : (
                   <Stack textAlign="left">
-                    <Typography variant="h2">Lola</Typography>
+                    <Typography variant="h3">Lola</Typography>
                     <Typography variant="h4">and the</Typography>
-                    <Typography variant="h2">Lost Ring</Typography>
+                    <Typography variant="h3">Lost Ring</Typography>
                   </Stack>
                 )}
 
@@ -80,7 +80,7 @@ const AboutLola = () => {
 
           {/* About the Book */}
           <Stack spacing={4} textAlign={isSm ? "center" : "left"}>
-            <Typography variant="h5" fontWeight="bold">
+            <Typography variant="h6" fontWeight="bold">
               Do you sometimes have a messy room? Lola does!
             </Typography>
 
@@ -97,7 +97,7 @@ const AboutLola = () => {
               </Typography>
             </Stack>
 
-            <Typography variant="h5" fontWeight="bold">
+            <Typography variant="h6" fontWeight="bold">
               Bonus activity included at the end that turns room cleaning into a
               playful adventure!
             </Typography>

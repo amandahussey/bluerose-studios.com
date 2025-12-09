@@ -15,6 +15,7 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: ["Delius", "Helvetica", "Arial", "serif"].join(","),
+    fontSize: 18,
   },
   components: {
     MuiButton: {
