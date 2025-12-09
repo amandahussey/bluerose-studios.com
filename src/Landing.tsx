@@ -238,7 +238,7 @@ const Landing = () => {
       >
         <Button
           variant="contained"
-          href="/books/lola"
+          href="#/books/lola"
           size="large"
           style={{
             background: `linear-gradient(to right, ${theme.palette.secondary.light} 5%, ${theme.palette.secondary.main})`,
