@@ -19,6 +19,7 @@ import "./Landing.css";
 const Landing = () => {
   const theme = useTheme();
 
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
@@ -174,8 +175,7 @@ const Landing = () => {
             src={lolaCover}
             alt="Lola and the Lost Ring"
             style={{
-              height: "50vh",
-              maxHeight: 400,
+              width: isSm ? "70vw" : 400,
               objectFit: "contain",
               borderRadius: 6,
               boxShadow: `0px 0px 50px 6px ${theme.palette.secondary.light}`,
