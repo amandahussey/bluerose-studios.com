@@ -6,13 +6,13 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import lolaCover from "/lola-cover.png";
+
 import { ArrowRightAltRounded } from "@mui/icons-material";
 
 import bluerose from "/blue-rose.png";
-
 import sparkle1 from "/sparkle-1.png";
 import sparkle2 from "/sparkle-2.png";
+import lolaCover from "/lola-cover.png";
 
 import "./Landing.css";
 
@@ -237,7 +237,7 @@ const Landing = () => {
       >
         <Button
           variant="contained"
-          // href="/books/lola"
+          href="/books/lola"
           size="large"
           style={{
             background: `linear-gradient(to right, ${theme.palette.secondary.light} 5%, ${theme.palette.secondary.main})`,

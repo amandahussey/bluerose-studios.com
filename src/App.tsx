@@ -1,12 +1,15 @@
 import { theme } from "./theme";
-import { Box, ThemeProvider } from "@mui/material";
-import Landing from "./Landing";
+import { Stack, ThemeProvider } from "@mui/material";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Nav from "./Nav";
+import Home from "./Home";
+import AboutLola from "./AboutLola";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Box
+      <Stack
         minHeight="100vh"
         style={{
           backgroundColor: theme.palette.primary.dark,
@@ -14,8 +17,14 @@ const App = () => {
         }}
       >
         <Nav />
-        <Landing />
-      </Box>
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/books/lola" element={<AboutLola />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </Stack>
     </ThemeProvider>
   );
 };
