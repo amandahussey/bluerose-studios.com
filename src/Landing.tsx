@@ -1,4 +1,11 @@
-import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import lolaCover from "/lola-cover.png";
 import { ArrowRightAltRounded } from "@mui/icons-material";
 
@@ -6,12 +13,13 @@ import bluerose from "/blue-rose.png";
 
 import sparkle1 from "/sparkle-1.png";
 import sparkle2 from "/sparkle-2.png";
-import sparkle3 from "/sparkle-3.png";
 
 import "./Landing.css";
 
 const Landing = () => {
   const theme = useTheme();
+
+  const isMd = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Stack
@@ -40,6 +48,17 @@ const Landing = () => {
             }}
           />
         </Box>
+
+        <img
+          src={sparkle1}
+          style={{
+            height: 14,
+            objectFit: "contain",
+            position: "relative",
+            bottom: !isMd ? 10 : 20,
+            left: !isMd ? 30 : 100,
+          }}
+        />
 
         <Stack direction="row" alignSelf="center">
           <img
@@ -109,40 +128,44 @@ const Landing = () => {
       <Stack>
         <Box alignSelf="center">
           {/* Lola Cover Sparkles */}
-          <img
-            src={sparkle2}
-            style={{
-              height: 10,
-              objectFit: "contain",
-              position: "relative",
-              zIndex: 100,
-              left: "-10%",
-              bottom: 300,
-            }}
-          />
-          <img
-            src={sparkle1}
-            style={{
-              height: 30,
-              objectFit: "contain",
-              position: "relative",
-              zIndex: 100,
-              left: "-10%",
-              bottom: 300,
-            }}
-          />
+          {isMd && (
+            <>
+              <img
+                src={sparkle2}
+                style={{
+                  height: 10,
+                  objectFit: "contain",
+                  position: "relative",
+                  zIndex: 100,
+                  left: "-10%",
+                  bottom: 300,
+                }}
+              />
+              <img
+                src={sparkle1}
+                style={{
+                  height: 30,
+                  objectFit: "contain",
+                  position: "relative",
+                  zIndex: 100,
+                  left: "-10%",
+                  bottom: 300,
+                }}
+              />
 
-          <img
-            src={sparkle2}
-            style={{
-              height: 30,
-              objectFit: "contain",
-              position: "relative",
-              zIndex: 100,
-              left: "-20%",
-              bottom: 350,
-            }}
-          />
+              <img
+                src={sparkle2}
+                style={{
+                  height: 30,
+                  objectFit: "contain",
+                  position: "relative",
+                  zIndex: 100,
+                  left: "-20%",
+                  bottom: 350,
+                }}
+              />
+            </>
+          )}
 
           {/* Lola Cover */}
           <img
@@ -159,40 +182,44 @@ const Landing = () => {
           />
 
           {/* More Sparkles */}
-          <img
-            src={sparkle1}
-            style={{
-              height: 10,
-              objectFit: "contain",
-              position: "relative",
-              zIndex: 100,
-              right: "-10%",
-              bottom: 200,
-            }}
-          />
-          <img
-            src={sparkle2}
-            style={{
-              height: 30,
-              objectFit: "contain",
-              position: "relative",
-              zIndex: 100,
-              right: "-10%",
-              bottom: 200,
-            }}
-          />
+          {isMd && (
+            <>
+              <img
+                src={sparkle1}
+                style={{
+                  height: 10,
+                  objectFit: "contain",
+                  position: "relative",
+                  zIndex: 100,
+                  right: "-10%",
+                  bottom: 200,
+                }}
+              />
+              <img
+                src={sparkle2}
+                style={{
+                  height: 30,
+                  objectFit: "contain",
+                  position: "relative",
+                  zIndex: 100,
+                  right: "-10%",
+                  bottom: 200,
+                }}
+              />
 
-          <img
-            src={sparkle1}
-            style={{
-              height: 30,
-              objectFit: "contain",
-              position: "relative",
-              zIndex: 100,
-              right: "-12%",
-              bottom: 250,
-            }}
-          />
+              <img
+                src={sparkle1}
+                style={{
+                  height: 30,
+                  objectFit: "contain",
+                  position: "relative",
+                  zIndex: 100,
+                  right: "-12%",
+                  bottom: 250,
+                }}
+              />
+            </>
+          )}
         </Box>
         <Box sx={{ display: { xs: "none", md: "block" } }}>
           <div className="shelf">
