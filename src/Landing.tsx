@@ -25,6 +25,7 @@ const Landing = () => {
   return (
     <Stack
       alignSelf="center"
+      width="100%"
       pt={{ xs: 0, md: 4 }}
       pb={8}
       spacing={8}
