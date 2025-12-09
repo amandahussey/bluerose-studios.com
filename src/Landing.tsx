@@ -25,7 +25,7 @@ const Landing = () => {
   return (
     <Stack
       alignSelf="center"
-      pt={{ xs: 0, md: 8 }}
+      pt={{ xs: 0, md: 4 }}
       pb={8}
       spacing={8}
       sx={{
@@ -33,12 +33,7 @@ const Landing = () => {
       }}
     >
       <Stack>
-        <Box
-          sx={{
-            display: { xs: "flex", md: "none" },
-            alignSelf: "center",
-          }}
-        >
+        <Box sx={{ alignSelf: "center" }}>
           <img
             src={bluerose}
             alt="blue rose"
@@ -46,23 +41,6 @@ const Landing = () => {
               height: 80,
               objectFit: "contain",
               padding: 12,
-            }}
-          />
-        </Box>
-
-        <Box
-          position="relative"
-          alignSelf="center"
-          display={isMd ? "block" : "none"}
-        >
-          <img
-            src={sparkle1}
-            style={{
-              height: 14,
-              objectFit: "contain",
-              position: "relative",
-              bottom: 20,
-              left: 100,
             }}
           />
         </Box>
@@ -89,7 +67,7 @@ const Landing = () => {
               left: 34,
             }}
           />
-          <Stack>
+          <Stack mb={2}>
             <Typography
               variant="h5"
               textAlign="center"
@@ -114,7 +92,7 @@ const Landing = () => {
               height: 14,
               objectFit: "contain",
               position: "relative",
-              top: 72,
+              top: 65,
               right: 32,
             }}
           />
@@ -135,7 +113,7 @@ const Landing = () => {
               objectFit: "contain",
               marginRight: 12,
               position: "relative",
-              top: 74,
+              top: 60,
               right: 34,
             }}
           />
