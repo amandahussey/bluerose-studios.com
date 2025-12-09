@@ -17,7 +17,7 @@ function Nav() {
     null
   );
 
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenBooksMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElBooks(event.currentTarget);
   };
   const handleCloseBooksMenu = () => {
@@ -60,7 +60,7 @@ function Nav() {
 
         {/* Books Menu */}
         <Button
-          onClick={handleOpenUserMenu}
+          onClick={handleOpenBooksMenu}
           sx={{ my: 2, color: "white", display: "block" }}
           aria-controls="menu-books"
         >
