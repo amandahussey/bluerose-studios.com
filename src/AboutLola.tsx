@@ -51,11 +51,11 @@ const AboutLola = () => {
                     Lola and the Lost Ring
                   </Typography>
                 ) : (
-                  <Typography textAlign="left">
+                  <Stack textAlign="left">
                     <Typography variant="h2">Lola</Typography>
                     <Typography variant="h4">and the</Typography>
                     <Typography variant="h2">Lost Ring</Typography>
-                  </Typography>
+                  </Stack>
                 )}
 
                 {/* Snippet */}
