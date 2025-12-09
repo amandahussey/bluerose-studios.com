@@ -192,7 +192,9 @@ const Landing = () => {
               width: isSm ? "70vw" : 400,
               objectFit: "contain",
               borderRadius: 6,
-              boxShadow: `0px 0px 50px 6px ${theme.palette.secondary.light}`,
+              boxShadow: `0px 0px ${isSm ? "20px" : "50px"} 6px ${
+                theme.palette.secondary.light
+              }`,
               position: "relative",
               zIndex: 99,
             }}
