@@ -26,7 +26,6 @@ const Landing = () => {
     <Stack
       alignSelf="center"
       width="100%"
-      pt={{ xs: 0, md: 4 }}
       pb={8}
       spacing={8}
       sx={{
@@ -168,7 +167,8 @@ const Landing = () => {
             src={lolaCover}
             alt="Lola and the Lost Ring"
             style={{
-              width: isSm ? "70vw" : 400,
+              width: isSm ? "70vw" : "auto",
+              height: isSm ? "auto" : "40vh",
               objectFit: "contain",
               borderRadius: 6,
               boxShadow: `0px 0px ${isSm ? "20px" : "50px"} 6px ${

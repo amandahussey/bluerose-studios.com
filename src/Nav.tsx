@@ -30,7 +30,7 @@ function Nav() {
   return (
     <Container maxWidth="xl">
       <Toolbar disableGutters>
-        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+        <Box sx={{ display: { xs: "none", sm: "flex" } }}>
           <Link href="/">
             <img
               src={bluerose}
@@ -50,7 +50,7 @@ function Nav() {
           href="/"
           sx={{
             mr: 2,
-            display: { xs: "none", md: "flex" },
+            display: { xs: "none", sm: "flex" },
             fontFamily: "American Typewriter",
             fontWeight: 400,
             letterSpacing: ".3rem",
@@ -61,7 +61,7 @@ function Nav() {
           blue rose studios
         </Typography>
         {/* Mobile */}
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } }}>
           <IconButton
             size="large"
             aria-label="account of current user"
@@ -86,7 +86,7 @@ function Nav() {
             }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
-            sx={{ display: { xs: "block", md: "none" } }}
+            sx={{ display: { xs: "block", sm: "none" } }}
           >
             {pages.map((page) => (
               <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -99,7 +99,7 @@ function Nav() {
           sx={{
             flexGrow: 1,
             justifyContent: "flex-end",
-            display: { xs: "none", md: "flex" },
+            display: { xs: "none", sm: "flex" },
           }}
         >
           {pages.map((page) => (
