@@ -20,11 +20,11 @@ const AboutLola = () => {
       flexGrow={1}
       justifyContent="center"
       style={{
-        background: `linear-gradient(to bottom, ${theme.palette.primary.dark} 5%, ${theme.palette.secondary.main})`,
+        background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.secondary.main})`,
       }}
     >
       <Container style={{ maxWidth: 700 }}>
-        <Stack spacing={isSm ? 6 : 12}>
+        <Stack spacing={isSm ? 4 : 8}>
           {/* Row Container with book cover + text/buttons */}
           <Stack
             direction={isSm ? "column" : "row"}
@@ -79,23 +79,25 @@ const AboutLola = () => {
           </Stack>
 
           {/* About the Book */}
-          <Stack spacing={2} textAlign={isSm ? "center" : "left"}>
+          <Stack spacing={4} textAlign={isSm ? "center" : "left"}>
             <Typography variant="h5" fontWeight="bold">
               Do you sometimes have a messy room? Lola does!
             </Typography>
 
-            <Typography>
-              When a mysterious and rare purple diamond ring goes missing, Lola
-              and Ned must search through her purple tornado of a room to find
-              it.
-            </Typography>
+            <Stack spacing={2}>
+              <Typography>
+                When a mysterious and rare purple diamond ring goes missing,
+                Lola and Ned must search through her purple tornado of a room to
+                find it.
+              </Typography>
 
-            <Typography>
-              A story about feeling overwhelmed in a mess, and finding comfort
-              with someone there to help.
-            </Typography>
+              <Typography>
+                A story about feeling overwhelmed in a mess, and finding comfort
+                with someone there to help.
+              </Typography>
+            </Stack>
 
-            <Typography fontWeight="bold">
+            <Typography variant="h5" fontWeight="bold">
               Bonus activity included at the end that turns room cleaning into a
               playful adventure!
             </Typography>
