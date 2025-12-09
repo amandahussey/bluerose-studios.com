@@ -80,7 +80,12 @@ function Nav() {
               Books
             </Button>
             <Menu
-              sx={{ mt: "45px" }}
+              sx={{
+                mt: "45px",
+                "& .MuiPaper-root": {
+                  backgroundColor: "primary.dark",
+                },
+              }}
               id="menu-books"
               anchorEl={anchorElBooks}
               anchorOrigin={{
