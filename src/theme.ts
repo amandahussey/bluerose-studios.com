@@ -14,7 +14,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Comic Neue", "Helvetica", "Arial", "serif"].join(","),
+    fontFamily: ["Delius", "Helvetica", "Arial", "serif"].join(","),
   },
   components: {
     MuiButton: {
