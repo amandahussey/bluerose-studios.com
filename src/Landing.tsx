@@ -49,16 +49,18 @@ const Landing = () => {
           />
         </Box>
 
-        <img
-          src={sparkle1}
-          style={{
-            height: 14,
-            objectFit: "contain",
-            position: "relative",
-            bottom: !isMd ? 10 : 20,
-            left: !isMd ? 30 : 100,
-          }}
-        />
+        <Box position="relative" alignSelf="center">
+          <img
+            src={sparkle1}
+            style={{
+              height: 14,
+              objectFit: "contain",
+              position: "relative",
+              bottom: !isMd ? 10 : 20,
+              left: !isMd ? 30 : 100,
+            }}
+          />
+        </Box>
 
         <Stack direction="row" alignSelf="center">
           <img
