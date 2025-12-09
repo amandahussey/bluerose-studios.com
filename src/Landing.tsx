@@ -4,6 +4,10 @@ import { ArrowRightAltRounded } from "@mui/icons-material";
 
 import bluerose from "/blue-rose.png";
 
+import sparkle1 from "/sparkle-1.png";
+import sparkle2 from "/sparkle-2.png";
+import sparkle3 from "/sparkle-3.png";
+
 import "./Landing.css";
 
 const Landing = () => {
@@ -20,7 +24,12 @@ const Landing = () => {
       }}
     >
       <Stack>
-        <Box sx={{ display: { xs: "flex", md: "none" }, alignSelf: "center" }}>
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            alignSelf: "center",
+          }}
+        >
           <img
             src={bluerose}
             alt="blue rose"
@@ -31,26 +40,111 @@ const Landing = () => {
             }}
           />
         </Box>
-        <Typography
-          variant="h5"
-          textAlign="center"
-          letterSpacing={4}
-          fontFamily="American Typewriter"
-        >
-          blue rose studios
-        </Typography>
-        <Typography
-          variant="h6"
-          textAlign="center"
-          letterSpacing={9}
-          fontFamily="American Typewriter"
-        >
-          presents
-        </Typography>
+
+        <Stack direction="row" alignSelf="center">
+          <img
+            src={sparkle1}
+            style={{
+              height: 10,
+              objectFit: "contain",
+              position: "relative",
+              top: 72,
+              left: 32,
+            }}
+          />
+          <img
+            src={sparkle2}
+            style={{
+              height: 30,
+              objectFit: "contain",
+              marginRight: 12,
+              position: "relative",
+              top: 74,
+              left: 34,
+            }}
+          />
+          <Stack>
+            <Typography
+              variant="h5"
+              textAlign="center"
+              letterSpacing={4}
+              fontFamily="American Typewriter"
+            >
+              blue rose studios
+            </Typography>
+            <Typography
+              variant="h6"
+              textAlign="center"
+              letterSpacing={9}
+              fontFamily="American Typewriter"
+            >
+              presents
+            </Typography>
+          </Stack>
+
+          <img
+            src={sparkle1}
+            style={{
+              height: 30,
+              objectFit: "contain",
+              position: "relative",
+              top: 72,
+              right: 32,
+            }}
+          />
+          <img
+            src={sparkle2}
+            style={{
+              height: 10,
+              objectFit: "contain",
+              marginRight: 12,
+              position: "relative",
+              top: 74,
+              right: 34,
+            }}
+          />
+        </Stack>
       </Stack>
 
       <Stack>
         <Box alignSelf="center">
+          {/* Lola Cover Sparkles */}
+          <img
+            src={sparkle2}
+            style={{
+              height: 10,
+              objectFit: "contain",
+              position: "relative",
+              zIndex: 100,
+              left: "-10%",
+              bottom: 300,
+            }}
+          />
+          <img
+            src={sparkle1}
+            style={{
+              height: 30,
+              objectFit: "contain",
+              position: "relative",
+              zIndex: 100,
+              left: "-10%",
+              bottom: 300,
+            }}
+          />
+
+          <img
+            src={sparkle2}
+            style={{
+              height: 30,
+              objectFit: "contain",
+              position: "relative",
+              zIndex: 100,
+              left: "-20%",
+              bottom: 350,
+            }}
+          />
+
+          {/* Lola Cover */}
           <img
             src={lolaCover}
             alt="Lola and the Lost Ring"
@@ -61,6 +155,42 @@ const Landing = () => {
               boxShadow: `0px 0px 50px 6px ${theme.palette.secondary.light}`,
               position: "relative",
               zIndex: 99,
+            }}
+          />
+
+          {/* More Sparkles */}
+          <img
+            src={sparkle1}
+            style={{
+              height: 10,
+              objectFit: "contain",
+              position: "relative",
+              zIndex: 100,
+              right: "-10%",
+              bottom: 200,
+            }}
+          />
+          <img
+            src={sparkle2}
+            style={{
+              height: 30,
+              objectFit: "contain",
+              position: "relative",
+              zIndex: 100,
+              right: "-10%",
+              bottom: 200,
+            }}
+          />
+
+          <img
+            src={sparkle1}
+            style={{
+              height: 30,
+              objectFit: "contain",
+              position: "relative",
+              zIndex: 100,
+              right: "-12%",
+              bottom: 250,
             }}
           />
         </Box>
