@@ -17,6 +17,7 @@ const SpotTheDifference = () => {
   const theme = useTheme();
 
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [numDiffsFound, setNumDiffsFound] = useState(0);
 
@@ -160,7 +161,7 @@ const SpotTheDifference = () => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 400,
+            width: isSm ? "70vw" : 400,
             p: 4,
             background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.secondary.dark})`,
             color: theme.palette.text.primary,
