@@ -146,7 +146,7 @@ const AboutLola = () => {
 
               <Box>
                 <Button variant="contained" onClick={handleOpen}>
-                  See Bonus Activity
+                  Preview Bonus Activity
                 </Button>
                 <Modal open={open} onClose={handleClose}>
                   <Box sx={modalStyle}>
