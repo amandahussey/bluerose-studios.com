@@ -208,6 +208,7 @@ const GameCard = ({
         borderRadius: 4,
         boxShadow: `0 0 10px ${theme.palette.secondary.light}`,
         width: !isMd ? "33vw" : "80vw",
+        maxWidth: 400,
       }}
       p={2}
       width="fit-content"
