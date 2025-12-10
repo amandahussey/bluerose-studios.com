@@ -80,7 +80,8 @@ const AboutLola = () => {
 
                 {/* Snippet */}
                 <Typography textAlign={isSm ? "center" : "left"}>
-                  A story for all of us with messy rooms
+                  A story for all of us with <br />
+                  messy rooms
                 </Typography>
               </Stack>
 
