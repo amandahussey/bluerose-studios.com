@@ -220,8 +220,12 @@ const GameCard = ({
         </Stack>
 
         {preview}
-        <Stack flexGrow={1} justifyContent="center">
+        <Stack flexGrow={1} justifyContent="space-evenly">
           <Typography variant="subtitle2">{subtext}</Typography>
+
+          <Typography variant="caption" fontSize={12}>
+            {buttonSubtext}
+          </Typography>
         </Stack>
       </Stack>
 
@@ -238,10 +242,6 @@ const GameCard = ({
             </Button>
           </Box>
         )}
-
-        <Typography variant="caption" fontSize={12}>
-          {buttonSubtext}
-        </Typography>
       </Stack>
     </Stack>
   );
