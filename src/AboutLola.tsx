@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Button,
   Stack,
@@ -5,13 +6,28 @@ import {
   useTheme,
   useMediaQuery,
   Container,
+  Box,
+  Modal,
 } from "@mui/material";
 import lolaCover from "/lola-cover.png";
+import activityPage from "/activity-page.png";
+
+const modalStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  boxShadow: 4,
+};
 
 const AboutLola = () => {
   const theme = useTheme();
 
   const isSm = useMediaQuery(theme.breakpoints.down(800));
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <Stack
@@ -97,10 +113,37 @@ const AboutLola = () => {
               </Typography>
             </Stack>
 
-            <Typography variant="h6" fontWeight="bold">
-              Bonus activity included at the end that turns room cleaning into a
-              playful adventure!
-            </Typography>
+            <Stack
+              direction={isSm ? "column" : "row"}
+              justifyContent="space-between"
+              alignItems="center"
+              spacing={isSm ? 3 : 0}
+            >
+              <Typography variant="h6" fontWeight="bold" flexBasis="60%">
+                Bonus activity included at the end that turns room cleaning into
+                a playful adventure!
+              </Typography>
+
+              <Box>
+                <Button variant="contained" onClick={handleOpen}>
+                  See Bonus Activity
+                </Button>
+                <Modal open={open} onClose={handleClose}>
+                  <Box sx={modalStyle}>
+                    <img
+                      src={activityPage}
+                      alt="Activity page from Lola and the Lost Ring"
+                      style={{
+                        height: isSm ? "auto" : "80vh",
+                        width: isSm ? "90vw" : "auto",
+                        objectFit: "contain",
+                        borderRadius: 4,
+                      }}
+                    />
+                  </Box>
+                </Modal>
+              </Box>
+            </Stack>
           </Stack>
         </Stack>
       </Container>
