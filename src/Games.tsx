@@ -31,16 +31,11 @@ const Games = () => {
       pb={8}
       pt={isMd ? 4 : 0}
     >
-      <Stack justifyContent="center" alignItems="center" spacing={2}>
+      <Stack justifyContent="center" alignItems="center" spacing={1} mb={4}>
         <Typography variant="h4">Lola's Games</Typography>
         <Typography variant="subtitle1">Having fun with the mess!</Typography>
       </Stack>
-      <Stack
-        direction={isMd ? "column" : "row"}
-        alignSelf="center"
-        spacing={4}
-        padding={8}
-      >
+      <Stack direction={isMd ? "column" : "row"} alignSelf="center" spacing={4}>
         <GameCard
           heading1="Spot the Difference:"
           heading2="Lola's Messy Room"
@@ -60,7 +55,7 @@ const Games = () => {
                 src={spotTheDiff1}
                 alt="Spot the Difference Game Preview - Image 1"
                 style={{
-                  width: isSm ? "35vw" : 200,
+                  width: isSm ? "37vw" : "45%",
                   height: "auto",
                   objectFit: "contain",
                   borderTopLeftRadius: 4,
@@ -71,7 +66,7 @@ const Games = () => {
                 src={spotTheDiff2}
                 alt="Spot the Difference Game Preview - Image 2"
                 style={{
-                  width: isSm ? "35vw" : 200,
+                  width: isSm ? "37vw" : "45%",
                   height: "auto",
                   objectFit: "contain",
                   borderTopRightRadius: 4,
@@ -84,9 +79,14 @@ const Games = () => {
         <GameCard
           heading1="Coming Soon:"
           heading2="Lola's Mobile Adventure"
-          subtext="Swipe to fold, tap to tidy! Help Lola clean her room!"
+          subtext={
+            <Typography>
+              Swipe to fold, tap to tidy! <br />
+              Help Lola clean her room!
+            </Typography>
+          }
           // button={{ text: "Learn More", href: "#" }}
-          buttonSubtext="In development for iOS and Android"
+          secondarySubtext="In development for iOS and Android"
           preview={
             <Stack direction="row" justifyContent="center">
               <Box position="relative">
@@ -184,17 +184,17 @@ const GameCard = ({
   preview,
   subtext,
   button,
-  buttonSubtext,
+  secondarySubtext,
 }: {
   heading1?: string;
   heading2?: string;
   preview?: JSX.Element;
-  subtext?: string;
+  subtext?: string | JSX.Element;
   button?: {
     text: string;
     href: string;
   };
-  buttonSubtext?: string;
+  secondarySubtext?: string;
 }) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
@@ -207,6 +207,7 @@ const GameCard = ({
         border: `2px solid ${theme.palette.secondary.light}`,
         borderRadius: 4,
         boxShadow: `0 0 10px ${theme.palette.secondary.light}`,
+        width: !isMd ? "33vw" : "80vw",
       }}
       p={2}
       width="fit-content"
@@ -220,11 +221,11 @@ const GameCard = ({
         </Stack>
 
         {preview}
-        <Stack flexGrow={1} justifyContent="space-evenly">
+        <Stack flexGrow={1} spacing={1.5}>
           <Typography variant="subtitle2">{subtext}</Typography>
 
           <Typography variant="caption" fontSize={12}>
-            {buttonSubtext}
+            {secondarySubtext}
           </Typography>
         </Stack>
       </Stack>
