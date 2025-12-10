@@ -7,6 +7,7 @@ import Home from "./Home";
 import AboutLola from "./AboutLola";
 import SpotTheDifference from "./SpotTheDifference";
 import Games from "./Games";
+import AboutBlueRose from "./AboutBlueRose";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Routes>
             <Route path="/books/lola" element={<AboutLola />} />
             <Route path="/games" element={<Games />} />
+            <Route path="/about" element={<AboutBlueRose />} />
             <Route
               path="/games/lola/spot-the-difference"
               element={<SpotTheDifference />}

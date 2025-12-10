@@ -123,7 +123,7 @@ function Nav() {
             {/* About Button */}
             <Button
               sx={{ my: 2, color: "white", display: "block" }}
-              // href="#/about"
+              href="#/about"
             >
               About
             </Button>
