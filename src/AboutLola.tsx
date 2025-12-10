@@ -13,18 +13,24 @@ import {
 import lolaCover from "/lola-cover.png";
 import activityPage1 from "/activity-page-1.png";
 import activityPage2 from "/activity-page-2.png";
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import {
+  ArrowBackIosRounded,
+  ArrowForwardIosRounded,
+  CloseRounded,
+} from "@mui/icons-material";
 
 const AboutLola = () => {
   const theme = useTheme();
 
   const isSm = useMediaQuery(theme.breakpoints.down(800));
 
+  const [currentActivityPage, setCurrentActivityPage] = useState(activityPage1);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const [currentActivityPage, setCurrentActivityPage] = useState(activityPage1);
+  const handleClose = () => {
+    setOpen(false);
+    setCurrentActivityPage(activityPage1);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -158,8 +164,20 @@ const AboutLola = () => {
                     transform: "translate(-50%, -50%)",
                     boxShadow: 4,
                     background: theme.palette.background.paper,
+                    borderRadius: 4,
+                    py: 6,
                   }}
                 >
+                  <IconButton
+                    size={isSm ? "small" : "medium"}
+                    sx={{
+                      position: "absolute",
+                      top: 4,
+                      right: 4,
+                    }}
+                  >
+                    <CloseRounded onClick={handleClose} />
+                  </IconButton>
                   <Stack direction="row" alignItems="center">
                     <IconButton
                       size={isSm ? "small" : "medium"}
@@ -170,7 +188,7 @@ const AboutLola = () => {
                             : "visible",
                       }}
                     >
-                      <ArrowBack
+                      <ArrowBackIosRounded
                         onClick={() => {
                           setCurrentActivityPage(activityPage1);
                         }}
@@ -199,7 +217,7 @@ const AboutLola = () => {
                             : "visible",
                       }}
                     >
-                      <ArrowForward
+                      <ArrowForwardIosRounded
                         onClick={() => {
                           setCurrentActivityPage(activityPage2);
                         }}
