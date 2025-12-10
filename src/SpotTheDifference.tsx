@@ -1,3 +1,4 @@
+import { ArrowBackRounded } from "@mui/icons-material";
 import {
   Stack,
   Typography,
@@ -7,6 +8,8 @@ import {
   Modal,
   Skeleton,
   CircularProgress,
+  Button,
+  Container,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -95,6 +98,17 @@ const SpotTheDifference = () => {
         background: `linear-gradient(to bottom, ${theme.palette.primary.dark} 70%, ${theme.palette.secondary.dark})`,
       }}
     >
+      <Container maxWidth="lg">
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<ArrowBackRounded />}
+          href="#/games"
+        >
+          Back to Games
+        </Button>
+      </Container>
+
       <Stack flexGrow={1} justifyContent="center">
         <Stack spacing={1} textAlign="center" pt={3}>
           <Typography variant="h4">Spot the Difference</Typography>
