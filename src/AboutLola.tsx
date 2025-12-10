@@ -98,7 +98,12 @@ const AboutLola = () => {
                   <Button variant="contained" color="secondary">
                     Buy Book
                   </Button>
-                  <Button variant="contained">Play Game</Button>
+                  <Button
+                    variant="contained"
+                    href="#/games/lola/spot-the-difference"
+                  >
+                    Play Game
+                  </Button>
                 </Stack>
               )}
             </Stack>

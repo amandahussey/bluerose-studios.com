@@ -5,6 +5,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import Nav from "./Nav";
 import Home from "./Home";
 import AboutLola from "./AboutLola";
+import SpotTheDifference from "./SpotTheDifference";
 
 const App = () => {
   return (
@@ -21,6 +22,10 @@ const App = () => {
           <Nav />
           <Routes>
             <Route path="/books/lola" element={<AboutLola />} />
+            <Route
+              path="/games/lola/spot-the-difference"
+              element={<SpotTheDifference />}
+            />
             <Route path="/" element={<Home />} />
           </Routes>
         </Stack>
