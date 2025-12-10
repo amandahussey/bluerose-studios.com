@@ -14,8 +14,6 @@ import { LinkedIn } from "@mui/icons-material";
 const AboutBlueRose = () => {
   const theme = useTheme();
 
-  const isSm = useMediaQuery(theme.breakpoints.down(800));
-
   const textWraps = useMediaQuery(theme.breakpoints.down(473));
 
   return (
