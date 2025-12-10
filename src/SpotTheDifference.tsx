@@ -16,19 +16,58 @@ import { useEffect, useState } from "react";
 const spotTheDifference1 = "/spot-the-difference-1.png";
 const spotTheDifference2 = "/spot-the-difference-2.png";
 
+const DIFFERENCES = [
+  {
+    id: "sailboat",
+    x: 0.075,
+    y: 0.4,
+  },
+  {
+    id: "bird",
+    x: 0.67,
+    y: 0.045,
+  },
+  {
+    id: "ball",
+    x: 0.935,
+    y: 0.73,
+  },
+  {
+    id: "pencil-ground",
+    x: 0.565,
+    y: 0.745,
+  },
+  {
+    id: "coloring-book",
+    x: 0.2,
+    y: 0.74,
+  },
+  {
+    id: "sweater-chair",
+    x: 0.42,
+    y: 0.35,
+  },
+  {
+    id: "pencil-desk",
+    x: 0.655,
+    y: 0.375,
+  },
+];
+
 const SpotTheDifference = () => {
   const theme = useTheme();
 
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [numDiffsFound, setNumDiffsFound] = useState(0);
+  const [diffsFound, setDiffsFound] = useState<string[]>([]);
+  const numDiffsFound = diffsFound.length;
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
-    setNumDiffsFound(0);
+    setDiffsFound([]);
     setIsReloading(true);
   };
   const [isReloading, setIsReloading] = useState(false);
@@ -60,16 +99,125 @@ const SpotTheDifference = () => {
         justifyContent="center"
         spacing={3}
       >
-        <img
-          src={spotTheDifference1}
-          alt={`Spot the Difference - Lola's Messy Room - Image 1`}
-          style={{
-            width: isMd ? "80vw" : "35vw",
-            maxWidth: 500,
-            objectFit: "contain",
-            borderRadius: 4,
+        <Box
+          position="relative"
+          onClick={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const clickX = e.clientX - rect.left; // x position within the element.
+            const clickY = e.clientY - rect.top; // y position within the element.
+
+            const hit = DIFFERENCES.find((diff) => {
+              const diffX = diff.x * rect.width;
+              const diffY = diff.y * rect.height;
+              const tolerance = 60; // pixels
+
+              return (
+                clickX >= diffX - tolerance &&
+                clickX <= diffX + tolerance &&
+                clickY >= diffY - tolerance &&
+                clickY <= diffY + tolerance
+              );
+            });
+            if (hit) {
+              console.log("hit!", hit.id);
+              setDiffsFound((prev) =>
+                prev.includes(hit.id) ? prev : [...prev, hit.id]
+              );
+            }
           }}
-        />
+        >
+          <img
+            src={spotTheDifference1}
+            alt={`Spot the Difference - Lola's Messy Room - Image 1`}
+            style={{
+              width: isMd ? "80vw" : "35vw",
+              maxWidth: 500,
+              objectFit: "contain",
+              borderRadius: 4,
+            }}
+          />
+          {/* Sailboat */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: "40%",
+              left: "7.5%",
+              background: "red",
+              width: 2,
+              height: 2,
+            }}
+          />
+          {/* Bird */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: "4.5%",
+              right: "33%",
+              background: "red",
+              width: 2,
+              height: 2,
+            }}
+          />
+          {/* Ball */}
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "27%",
+              right: "6.5%",
+              background: "red",
+              width: 2,
+              height: 2,
+            }}
+          />
+          {/* Pencil on ground */}
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "25.5%",
+              right: "43%",
+              background: "red",
+              width: 2,
+              height: 2,
+            }}
+          />
+          {/* Coloring book */}
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "26%",
+              left: "20%",
+              background: "red",
+              width: 2,
+              height: 2,
+            }}
+          />
+          {/* Sweater on chair */}
+          <Box
+            sx={{
+              position: "absolute",
+              opacity: 0.5,
+              top: "35%",
+              left: "42%",
+              background: "red",
+              width: 2,
+              height: 2,
+            }}
+          />
+
+          {/* Pencil on desk */}
+          <Box
+            sx={{
+              position: "absolute",
+              opacity: 0.5,
+              top: "37.5%",
+              right: "34.5%",
+              background: "red",
+              width: 2,
+              height: 2,
+            }}
+          />
+        </Box>
+
         <img
           src={spotTheDifference2}
           alt={`Spot the Difference - Lola's Messy Room - Image 2`}
@@ -119,9 +267,6 @@ const SpotTheDifference = () => {
         <Stack
           mt={4}
           mb={8}
-          onClick={() => {
-            setNumDiffsFound((prev) => (prev < 7 ? prev + 1 : prev));
-          }}
           justifyContent="center"
           alignItems="center"
           height="100%"
