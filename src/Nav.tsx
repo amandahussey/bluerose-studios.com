@@ -5,9 +5,17 @@ import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, Stack, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Link,
+  Stack,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 import bluerose from "/blue-rose.png";
+import { Instagram } from "@mui/icons-material";
 
 function Nav() {
   const [anchorElBooks, setAnchorElBooks] = React.useState<null | HTMLElement>(
@@ -127,6 +135,15 @@ function Nav() {
             >
               About
             </Button>
+            {/* Instagram */}
+            <Box alignSelf="center">
+              <IconButton
+                href="https://www.instagram.com/bluerose__studios/"
+                target="_blank"
+              >
+                <Instagram />
+              </IconButton>
+            </Box>
           </Stack>
         </Stack>
       </Toolbar>
