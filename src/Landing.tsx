@@ -27,7 +27,7 @@ const Landing = () => {
       alignSelf="center"
       width="100%"
       pb={8}
-      spacing={8}
+      spacing={isSm ? 4 : 8}
       sx={{
         background: `linear-gradient(to bottom, ${theme.palette.primary.dark} 25%,  ${theme.palette.secondary.dark} 75%, ${theme.palette.primary.dark})`,
       }}
@@ -234,7 +234,7 @@ const Landing = () => {
         direction={{ xs: "column", sm: "row" }}
         justifyContent="center"
         alignItems="center"
-        spacing={4}
+        spacing={isSm ? 3 : 4}
       >
         <Button
           variant="contained"
