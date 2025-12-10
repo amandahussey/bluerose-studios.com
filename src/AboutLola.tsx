@@ -8,17 +8,12 @@ import {
   Container,
   Box,
   Modal,
+  IconButton,
 } from "@mui/material";
 import lolaCover from "/lola-cover.png";
-import activityPage from "/activity-page.png";
-
-const modalStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  boxShadow: 4,
-};
+import activityPage1 from "/activity-page-1.png";
+import activityPage2 from "/activity-page-2.png";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 const AboutLola = () => {
   const theme = useTheme();
@@ -28,6 +23,8 @@ const AboutLola = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const [currentActivityPage, setCurrentActivityPage] = useState(activityPage1);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -145,15 +142,45 @@ const AboutLola = () => {
                 cleaning into a playful adventure!
               </Typography>
 
+              {/* Preview Bonus Activity - Button */}
               <Box>
                 <Button variant="contained" onClick={handleOpen}>
                   Preview Bonus Activity
                 </Button>
-                <Modal open={open} onClose={handleClose}>
-                  <Box sx={modalStyle}>
+              </Box>
+              {/* Preview Bonus Activity - Modal */}
+              <Modal open={open} onClose={handleClose}>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    boxShadow: 4,
+                    background: theme.palette.background.paper,
+                  }}
+                >
+                  <Stack direction="row" alignItems="center">
+                    <IconButton
+                      sx={{
+                        visibility:
+                          currentActivityPage === activityPage1
+                            ? "hidden"
+                            : "visible",
+                      }}
+                    >
+                      <ArrowBack
+                        onClick={() => {
+                          setCurrentActivityPage(activityPage1);
+                        }}
+                      />
+                    </IconButton>
+
                     <img
-                      src={activityPage}
-                      alt="Activity page from Lola and the Lost Ring"
+                      src={currentActivityPage}
+                      alt={`Activity page ${
+                        currentActivityPage === activityPage1 ? "1" : "2"
+                      } from Lola and the Lost Ring`}
                       style={{
                         height: isSm ? "auto" : "80vh",
                         width: isSm ? "90vw" : "auto",
@@ -161,9 +188,24 @@ const AboutLola = () => {
                         borderRadius: 4,
                       }}
                     />
-                  </Box>
-                </Modal>
-              </Box>
+
+                    <IconButton
+                      sx={{
+                        visibility:
+                          currentActivityPage === activityPage2
+                            ? "hidden"
+                            : "visible",
+                      }}
+                    >
+                      <ArrowForward
+                        onClick={() => {
+                          setCurrentActivityPage(activityPage2);
+                        }}
+                      />
+                    </IconButton>
+                  </Stack>
+                </Box>
+              </Modal>
             </Stack>
           </Stack>
         </Stack>
