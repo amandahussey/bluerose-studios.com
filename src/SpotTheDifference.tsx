@@ -122,10 +122,13 @@ const SpotTheDifference = () => {
               left: "50%",
               transform: "translate(-50%, -50%)",
               width: 400,
-              boxShadow: 24,
               p: 4,
               background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.secondary.dark})`,
               color: theme.palette.text.primary,
+              textAlign: "center",
+              border: `2px solid ${theme.palette.secondary.light}`,
+              borderRadius: 4,
+              boxShadow: `0 0 10px ${theme.palette.secondary.light}`,
             }}
           >
             <Typography id="modal-modal-title" variant="h6" component="h2">
