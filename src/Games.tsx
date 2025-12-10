@@ -201,6 +201,10 @@ const GameCard = ({
 
   return (
     <Stack
+      onClick={() => {
+        if (!button) return;
+        window.location.href = button.href;
+      }}
       sx={{
         background: `linear-gradient(to bottom, ${theme.palette.primary.dark} 70%, ${theme.palette.secondary.dark})`,
         textAlign: "center",
@@ -209,6 +213,7 @@ const GameCard = ({
         boxShadow: `0 0 10px ${theme.palette.secondary.light}`,
         width: !isMd ? "33vw" : "80vw",
         maxWidth: 400,
+        cursor: button ? "pointer" : "default",
       }}
       p={2}
       width="fit-content"
