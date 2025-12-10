@@ -28,7 +28,6 @@ const Games = () => {
       }}
       alignItems="center"
       justifyContent="center"
-      spacing={4}
       pb={8}
       pt={isMd ? 4 : 0}
     >
@@ -36,7 +35,12 @@ const Games = () => {
         <Typography variant="h4">Lola's Games</Typography>
         <Typography variant="subtitle1">Having fun with the mess!</Typography>
       </Stack>
-      <Stack direction={isMd ? "column" : "row"} alignSelf="center" spacing={4}>
+      <Stack
+        direction={isMd ? "column" : "row"}
+        alignSelf="center"
+        spacing={4}
+        padding={8}
+      >
         <GameCard
           heading1="Spot the Difference:"
           heading2="Lola's Messy Room"
@@ -205,7 +209,6 @@ const GameCard = ({
         boxShadow: `0 0 10px ${theme.palette.secondary.light}`,
       }}
       p={2}
-      spacing={2}
       width="fit-content"
       justifyContent="space-between"
       alignSelf={isMd ? "center" : undefined}
