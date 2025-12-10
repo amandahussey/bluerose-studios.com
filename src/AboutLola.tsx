@@ -16,6 +16,7 @@ import activityPage2 from "/activity-page-2.png";
 import {
   ArrowBackIosRounded,
   ArrowForwardIosRounded,
+  ArrowRightAltRounded,
   CloseRounded,
 } from "@mui/icons-material";
 
@@ -95,14 +96,25 @@ const AboutLola = () => {
                   spacing={2}
                   justifyContent={isSm ? "center" : "flex-start"}
                 >
-                  <Button variant="contained" color="secondary">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    // style={{
+                    //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
+                    // }}
+                  >
                     Buy Book
                   </Button>
                   <Button
                     variant="contained"
-                    href="#/games/lola/spot-the-difference"
+                    href="#/games"
+                    endIcon={<ArrowRightAltRounded />}
+                    color="primary"
+                    // style={{
+                    //   background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 30%, ${theme.palette.primary.light})`,
+                    // }}
                   >
-                    Play Game
+                    Play Games
                   </Button>
                 </Stack>
               )}
@@ -116,10 +128,26 @@ const AboutLola = () => {
               spacing={2}
               justifyContent={isSm ? "center" : "flex-start"}
             >
-              <Button variant="contained" color="secondary">
+              <Button
+                variant="contained"
+                color="secondary"
+                // style={{
+                //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
+                // }}
+              >
                 Buy Book
               </Button>
-              <Button variant="contained">Play Game</Button>
+              <Button
+                variant="contained"
+                href="#/games"
+                endIcon={<ArrowRightAltRounded />}
+                color="primary"
+                // style={{
+                //   background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 50%, ${theme.palette.secondary.light})`,
+                // }}
+              >
+                Play Games
+              </Button>
             </Stack>
           )}
 
