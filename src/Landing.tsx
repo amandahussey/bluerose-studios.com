@@ -249,7 +249,7 @@ const Landing = () => {
 
         <Button
           variant="contained"
-          href="#/games/lola"
+          href="#/games"
           size="large"
           endIcon={<ArrowRightAltRounded />}
           style={{
