@@ -43,7 +43,7 @@ const AboutLola = () => {
         <Stack spacing={isSm ? 4 : 8}>
           {/* Row Container with book cover + text/buttons */}
           <Stack
-            direction={isSm ? "column" : "row"}
+            direction={isSm ? "column-reverse" : "row"}
             spacing={isSm ? 4 : 8}
             justifyContent="center"
             alignItems="center"
@@ -80,19 +80,35 @@ const AboutLola = () => {
                 </Typography>
               </Stack>
 
-              {/* Buttons Row Container */}
-              <Stack
-                direction="row"
-                spacing={2}
-                justifyContent={isSm ? "center" : "flex-start"}
-              >
-                <Button variant="contained" color="secondary">
-                  Buy Book
-                </Button>
-                <Button variant="contained">Play Game</Button>
-              </Stack>
+              {/* Buttons Row Container - Desktop */}
+              {!isSm && (
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  justifyContent={isSm ? "center" : "flex-start"}
+                >
+                  <Button variant="contained" color="secondary">
+                    Buy Book
+                  </Button>
+                  <Button variant="contained">Play Game</Button>
+                </Stack>
+              )}
             </Stack>
           </Stack>
+
+          {/* Buttons Row Container - Mobile */}
+          {isSm && (
+            <Stack
+              direction="row"
+              spacing={2}
+              justifyContent={isSm ? "center" : "flex-start"}
+            >
+              <Button variant="contained" color="secondary">
+                Buy Book
+              </Button>
+              <Button variant="contained">Play Game</Button>
+            </Stack>
+          )}
 
           {/* About the Book */}
           <Stack spacing={4} textAlign={isSm ? "center" : "left"}>
