@@ -209,8 +209,9 @@ const AboutLola = () => {
                       top: 4,
                       right: 4,
                     }}
+                    onClick={handleClose}
                   >
-                    <CloseRounded onClick={handleClose} />
+                    <CloseRounded />
                   </IconButton>
                   <Stack direction="row" alignItems="center">
                     <IconButton
@@ -221,12 +222,11 @@ const AboutLola = () => {
                             ? "hidden"
                             : "visible",
                       }}
+                      onClick={() => {
+                        setCurrentActivityPage(activityPage1);
+                      }}
                     >
-                      <ArrowBackIosRounded
-                        onClick={() => {
-                          setCurrentActivityPage(activityPage1);
-                        }}
-                      />
+                      <ArrowBackIosRounded />
                     </IconButton>
 
                     <img
@@ -241,22 +241,22 @@ const AboutLola = () => {
                         borderRadius: 4,
                       }}
                     />
-
-                    <IconButton
-                      size={isSm ? "small" : "medium"}
-                      sx={{
-                        visibility:
-                          currentActivityPage === activityPage2
-                            ? "hidden"
-                            : "visible",
-                      }}
-                    >
-                      <ArrowForwardIosRounded
+                    <Box>
+                      <IconButton
+                        size={isSm ? "small" : "medium"}
+                        sx={{
+                          visibility:
+                            currentActivityPage === activityPage2
+                              ? "hidden"
+                              : "visible",
+                        }}
                         onClick={() => {
                           setCurrentActivityPage(activityPage2);
                         }}
-                      />
-                    </IconButton>
+                      >
+                        <ArrowForwardIosRounded />
+                      </IconButton>
+                    </Box>
                   </Stack>
                 </Box>
               </Modal>
