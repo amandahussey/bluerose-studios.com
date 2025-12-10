@@ -141,8 +141,8 @@ const AboutLola = () => {
               spacing={isSm ? 3 : 0}
             >
               <Typography variant="h6" fontWeight="bold" flexBasis="60%">
-                Bonus activity included at the end that turns room cleaning into
-                a playful adventure!
+                Bonus activity included at the end of the book that turns room
+                cleaning into a playful adventure!
               </Typography>
 
               <Box>
