@@ -56,7 +56,7 @@ const AboutBlueRose = () => {
             </Stack>
 
             {/* Image of me */}
-            <Box alignSelf="center" py={4}>
+            <Box alignSelf="center" py={2}>
               <img
                 src={amanda}
                 alt="Image of Amanda, author of Blue Rose Studios books and games"
@@ -64,6 +64,8 @@ const AboutBlueRose = () => {
                   width: 180,
                   objectFit: "contain",
                   borderRadius: "50%",
+                  boxShadow: `0 0 16px 4px ${theme.palette.secondary.light}`,
+                  border: `2px solid ${theme.palette.secondary.light}`,
                 }}
               />
             </Box>
@@ -71,7 +73,7 @@ const AboutBlueRose = () => {
             {/* Details */}
             <Typography>
               Blue Rose Studios is home to an emerging world of stories and
-              games that inspire the little kid in me, and hopefully you 😊
+              games that inspire the little kid in me, and hopefully you, too 😊
             </Typography>
             <Typography>
               As a kid, my world was filled with big feelings and big adventures
