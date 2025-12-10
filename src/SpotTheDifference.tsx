@@ -149,7 +149,9 @@ const SpotTheDifference = () => {
               alignSelf="center"
               p={isMd ? 1 : 3}
               style={{
-                background: `linear-gradient(to bottom, ${theme.palette.primary.main}, ${theme.palette.secondary.dark})`,
+                background: `linear-gradient(to bottom, ${
+                  isMd ? theme.palette.primary.dark : theme.palette.primary.main
+                }, ${theme.palette.secondary.dark})`,
                 border: isMd
                   ? "none"
                   : `2px solid ${theme.palette.secondary.light}`,
