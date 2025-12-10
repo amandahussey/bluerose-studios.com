@@ -162,6 +162,7 @@ const AboutLola = () => {
                 >
                   <Stack direction="row" alignItems="center">
                     <IconButton
+                      size={isSm ? "small" : "medium"}
                       sx={{
                         visibility:
                           currentActivityPage === activityPage1
@@ -183,13 +184,14 @@ const AboutLola = () => {
                       } from Lola and the Lost Ring`}
                       style={{
                         height: isSm ? "auto" : "80vh",
-                        width: isSm ? "90vw" : "auto",
+                        width: isSm ? "80vw" : "auto",
                         objectFit: "contain",
                         borderRadius: 4,
                       }}
                     />
 
                     <IconButton
+                      size={isSm ? "small" : "medium"}
                       sx={{
                         visibility:
                           currentActivityPage === activityPage2
