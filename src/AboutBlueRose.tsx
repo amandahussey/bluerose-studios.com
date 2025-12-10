@@ -20,7 +20,7 @@ const AboutBlueRose = () => {
 
   return (
     <Stack
-      p={isSm ? 4 : 8}
+      p={4}
       pb={8}
       flexGrow={1}
       justifyContent="center"
@@ -32,7 +32,7 @@ const AboutBlueRose = () => {
         {/* Row Container with my image + text */}
         <Stack
           direction="column"
-          spacing={isSm ? 4 : 8}
+          spacing={4}
           justifyContent="center"
           alignItems="center"
         >
@@ -56,7 +56,7 @@ const AboutBlueRose = () => {
             </Stack>
 
             {/* Image of me */}
-            <Box alignSelf="center" py={2}>
+            <Box alignSelf="center" py={1}>
               <img
                 src={amanda}
                 alt="Image of Amanda, author of Blue Rose Studios books and games"
@@ -81,16 +81,17 @@ const AboutBlueRose = () => {
               those memories into something playful, meaningful, and alive.
             </Typography>
             <Typography>I hope you find a bit of magic here ✨</Typography>
-          </Stack>
 
-          <Box alignSelf="center">
-            <IconButton
-              href="https://www.linkedin.com/in/amanda-k-hussey/"
-              target="_blank"
-            >
-              <LinkedIn />
-            </IconButton>
-          </Box>
+            {/* LinkedIn  */}
+            <Box alignSelf="center">
+              <IconButton
+                href="https://www.linkedin.com/in/amanda-k-hussey/"
+                target="_blank"
+              >
+                <LinkedIn />
+              </IconButton>
+            </Box>
+          </Stack>
         </Stack>
       </Container>
     </Stack>
