@@ -6,6 +6,7 @@ import Nav from "./Nav";
 import Home from "./Home";
 import AboutLola from "./AboutLola";
 import SpotTheDifference from "./SpotTheDifference";
+import Games from "./Games";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Nav />
           <Routes>
             <Route path="/books/lola" element={<AboutLola />} />
+            <Route path="/games" element={<Games />} />
             <Route
               path="/games/lola/spot-the-difference"
               element={<SpotTheDifference />}

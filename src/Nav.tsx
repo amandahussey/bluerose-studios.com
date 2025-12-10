@@ -115,7 +115,7 @@ function Nav() {
             {/* Games Button */}
             <Button
               sx={{ my: 2, color: "white", display: "block" }}
-              // href="#/games"
+              href="#/games"
             >
               Games
             </Button>
