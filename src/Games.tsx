@@ -92,7 +92,6 @@ const Games = () => {
               <Box position="relative">
                 <img
                   src={sparkle2}
-                  alt="Sparkle"
                   style={{
                     width: 24,
                     height: "auto",
@@ -103,7 +102,6 @@ const Games = () => {
                 />
                 <img
                   src={sparkle1}
-                  alt="Sparkle"
                   style={{
                     width: 10,
                     height: "auto",
@@ -128,7 +126,6 @@ const Games = () => {
               <Box position="relative">
                 <img
                   src={sparkle2}
-                  alt="Sparkle"
                   style={{
                     width: 10,
                     height: "auto",
@@ -153,7 +150,6 @@ const Games = () => {
               <Box>
                 <img
                   src={sparkle2}
-                  alt="Sparkle"
                   style={{
                     width: 10,
                     height: "auto",
@@ -162,7 +158,6 @@ const Games = () => {
                 />
                 <img
                   src={sparkle1}
-                  alt="Sparkle"
                   style={{
                     width: 24,
                     height: "auto",
