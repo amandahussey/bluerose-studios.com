@@ -247,7 +247,8 @@ const SpotTheDifference = () => {
           <Typography variant="h4">Spot the Difference</Typography>
           <Typography variant="h6">Lola's Messy Room</Typography>
           <Typography variant="h6">
-            Tap all {differencesToCheck.length} differences to win!
+            Round {round}: Find all {differencesToCheck.length} differences{" "}
+            {round === 1 ? "" : "to win!"}
           </Typography>
         </Stack>
 
