@@ -16,8 +16,8 @@ import { MouseEventHandler, useEffect, useState } from "react";
 const spotTheDifference1a = "/src/assets/spot-the-difference-1a.png";
 const spotTheDifference1b = "/src/assets/spot-the-difference-1b.png";
 
-const spotTheDifference1 = "/src/assets/spot-the-difference-1.png";
-const spotTheDifference2 = "/src/assets/spot-the-difference-2.png";
+const spotTheDifference2a = "/src/assets/spot-the-difference-2a.png";
+const spotTheDifference2b = "/src/assets/spot-the-difference-2b.png";
 
 const DIFFERENCES_1 = [
   {
@@ -107,7 +107,7 @@ const SpotTheDifference = () => {
   const images =
     round === 1
       ? [spotTheDifference1a, spotTheDifference1b]
-      : [spotTheDifference1, spotTheDifference2];
+      : [spotTheDifference2a, spotTheDifference2b];
   const differencesToCheck = round === 1 ? DIFFERENCES_1 : DIFFERENCES_2;
 
   const [diffsFound, setDiffsFound] = useState<string[]>([]);
