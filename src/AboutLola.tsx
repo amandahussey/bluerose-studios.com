@@ -9,6 +9,7 @@ import {
   Box,
   Modal,
   IconButton,
+  Tooltip,
 } from "@mui/material";
 import lolaCover from "/lola-cover.png";
 import activityPage1 from "/activity-page-1.png";
@@ -96,15 +97,18 @@ const AboutLola = () => {
                   spacing={2}
                   justifyContent={isSm ? "center" : "flex-start"}
                 >
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    // style={{
-                    //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
-                    // }}
-                  >
-                    Buy Book
-                  </Button>
+                  <Tooltip title="Coming soon!">
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      // style={{
+                      //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
+                      // }}
+                    >
+                      Buy Book
+                    </Button>
+                  </Tooltip>
+
                   <Button
                     variant="contained"
                     href="#/games"
