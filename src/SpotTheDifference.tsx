@@ -11,7 +11,7 @@ import {
   Button,
   Container,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 
 const spotTheDifference1 = "/spot-the-difference-1.png";
 const spotTheDifference2 = "/spot-the-difference-2.png";
@@ -94,6 +94,30 @@ const SpotTheDifference = () => {
     }
   }, [isReloading]);
 
+  const handleClick: MouseEventHandler<HTMLDivElement> = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left; // x position within the element.
+    const clickY = e.clientY - rect.top; // y position within the element.
+
+    const hit = DIFFERENCES.find((diff) => {
+      const diffX = diff.x * rect.width;
+      const diffY = diff.y * rect.height;
+      const tolerance = 70; // pixels
+
+      return (
+        clickX >= diffX - tolerance &&
+        clickX <= diffX + tolerance &&
+        clickY >= diffY - tolerance &&
+        clickY <= diffY + tolerance
+      );
+    });
+    if (hit) {
+      setDiffsFound((prev) =>
+        prev.includes(hit.id) ? prev : [...prev, hit.id]
+      );
+    }
+  };
+
   const gameSpace = (
     <Stack>
       {isMd && (
@@ -106,32 +130,7 @@ const SpotTheDifference = () => {
         justifyContent="center"
         spacing={3}
       >
-        <Box
-          position="relative"
-          onClick={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const clickX = e.clientX - rect.left; // x position within the element.
-            const clickY = e.clientY - rect.top; // y position within the element.
-
-            const hit = DIFFERENCES.find((diff) => {
-              const diffX = diff.x * rect.width;
-              const diffY = diff.y * rect.height;
-              const tolerance = 70; // pixels
-
-              return (
-                clickX >= diffX - tolerance &&
-                clickX <= diffX + tolerance &&
-                clickY >= diffY - tolerance &&
-                clickY <= diffY + tolerance
-              );
-            });
-            if (hit) {
-              setDiffsFound((prev) =>
-                prev.includes(hit.id) ? prev : [...prev, hit.id]
-              );
-            }
-          }}
-        >
+        <Box position="relative" onClick={handleClick}>
           <img
             src={spotTheDifference1}
             alt={`Spot the Difference - Lola's Messy Room - Image 1`}
@@ -163,16 +162,38 @@ const SpotTheDifference = () => {
           )}
         </Box>
 
-        <img
-          src={spotTheDifference2}
-          alt={`Spot the Difference - Lola's Messy Room - Image 2`}
-          style={{
-            width: isMd ? "80vw" : "35vw",
-            maxWidth: 500,
-            objectFit: "contain",
-            borderRadius: 4,
-          }}
-        />
+        {/* Image 2 */}
+        <Box position="relative" onClick={handleClick}>
+          <img
+            src={spotTheDifference2}
+            alt={`Spot the Difference - Lola's Messy Room - Image 2`}
+            style={{
+              width: isMd ? "80vw" : "35vw",
+              maxWidth: 500,
+              objectFit: "contain",
+              borderRadius: 4,
+            }}
+          />
+          {DIFFERENCES.map(
+            (diff) =>
+              diffsFound.includes(diff.id) && (
+                <Box
+                  key={diff.id}
+                  sx={{
+                    position: "absolute",
+                    top: `${diff.y * 100}%`,
+                    left: `${diff.x * 100}%`,
+                    transform: "translate(-50%, -50%)",
+                    border: `3px solid gold`,
+                    width: `${12 * diff.aspectRatio}%`,
+                    height: `${12}%`,
+                    boxShadow: 2,
+                    borderRadius: "50%",
+                  }}
+                />
+              )
+          )}
+        </Box>
       </Stack>
       {!isMd && (
         <Box>
