@@ -102,13 +102,13 @@ const SpotTheDifference = () => {
     const hit = DIFFERENCES.find((diff) => {
       const diffX = diff.x * rect.width;
       const diffY = diff.y * rect.height;
-      const tolerance = 70; // pixels
+      const tolerance = 0.05; // 5% tolerance
 
       return (
-        clickX >= diffX - tolerance &&
-        clickX <= diffX + tolerance &&
-        clickY >= diffY - tolerance &&
-        clickY <= diffY + tolerance
+        clickX >= diffX - rect.width * tolerance &&
+        clickX <= diffX + rect.width * tolerance &&
+        clickY >= diffY - rect.height * tolerance &&
+        clickY <= diffY + rect.height * tolerance
       );
     });
     if (hit) {
