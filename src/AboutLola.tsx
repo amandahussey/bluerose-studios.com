@@ -9,8 +9,7 @@ import {
   Box,
   Modal,
   IconButton,
-  Tooltip,
-  ClickAwayListener,
+  Popover,
 } from "@mui/material";
 import lolaCover from "/lola-cover.png";
 import activityPage1 from "/activity-page-1.png";
@@ -20,8 +19,6 @@ import {
   ArrowForwardIosRounded,
   ArrowRightAltRounded,
   CloseRounded,
-  Preview,
-  PreviewRounded,
   Search,
 } from "@mui/icons-material";
 
@@ -42,14 +39,45 @@ const AboutLola = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [tooltipOpen, setTooltipOpen] = useState(false);
+  const [anchorElPopover, setAnchorElPopover] =
+    useState<HTMLButtonElement | null>(null);
 
-  const handleCloseTooltip = () => {
-    setTooltipOpen(false);
+  const handleClickPopover = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElPopover(event.currentTarget);
   };
-  const handleToggleTooltip = () => {
-    setTooltipOpen((prev) => !prev);
+
+  const handleClosePopover = () => {
+    setAnchorElPopover(null);
   };
+
+  const popoverIsOpen = Boolean(anchorElPopover);
+  const popoverId = popoverIsOpen ? "simple-popover" : undefined;
+
+  const comingSoonPopover = (
+    <Popover
+      id={popoverId}
+      open={popoverIsOpen}
+      anchorEl={anchorElPopover}
+      onClose={handleClosePopover}
+      anchorOrigin={{
+        vertical: isSm ? "top" : "bottom",
+        horizontal: "left",
+      }}
+      transformOrigin={{
+        vertical: isSm ? "bottom" : "top",
+        horizontal: "left",
+      }}
+      slotProps={{
+        paper: {
+          sx: {
+            backgroundColor: theme.palette.secondary.main,
+          },
+        },
+      }}
+    >
+      <Typography sx={{ py: 1, px: 2 }}>Coming soon!</Typography>
+    </Popover>
+  );
 
   return (
     <Stack
@@ -105,48 +133,39 @@ const AboutLola = () => {
 
               {/* Buttons Row Container - Desktop */}
               {!isSm && (
-                <ClickAwayListener onClickAway={handleCloseTooltip}>
-                  <Stack
-                    direction="row"
-                    spacing={2}
-                    justifyContent={isSm ? "center" : "flex-start"}
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  justifyContent={isSm ? "center" : "flex-start"}
+                >
+                  {/* Buy Book Button */}
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    aria-describedby={popoverId}
+                    onClick={handleClickPopover}
+                    // style={{
+                    //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
+                    // }}
                   >
-                    <Tooltip
-                      open={tooltipOpen}
-                      title="Coming soon!"
-                      slotProps={{
-                        tooltip: {
-                          sx: {
-                            backgroundColor: theme.palette.secondary.main,
-                          },
-                        },
-                      }}
-                    >
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={handleToggleTooltip}
-                        // style={{
-                        //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
-                        // }}
-                      >
-                        Buy Book
-                      </Button>
-                    </Tooltip>
+                    Buy Book
+                  </Button>
 
-                    <Button
-                      variant="contained"
-                      href="#/games"
-                      endIcon={<ArrowRightAltRounded />}
-                      color="primary"
-                      // style={{
-                      //   background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 30%, ${theme.palette.primary.light})`,
-                      // }}
-                    >
-                      Play Games
-                    </Button>
-                  </Stack>
-                </ClickAwayListener>
+                  {/* Coming soon! Popover */}
+                  {comingSoonPopover}
+
+                  <Button
+                    variant="contained"
+                    href="#/games"
+                    endIcon={<ArrowRightAltRounded />}
+                    color="primary"
+                    // style={{
+                    //   background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 30%, ${theme.palette.primary.light})`,
+                    // }}
+                  >
+                    Play Games
+                  </Button>
+                </Stack>
               )}
             </Stack>
           </Stack>
@@ -162,6 +181,7 @@ const AboutLola = () => {
                 <Button
                   variant="contained"
                   color="secondary"
+                  onClick={handleClickPopover}
                   // style={
                   //   !isSm
                   //     ? {}
@@ -172,6 +192,10 @@ const AboutLola = () => {
                 >
                   Buy Book
                 </Button>
+
+                {/* Coming soon! Popover */}
+                {comingSoonPopover}
+
                 <Button
                   variant="contained"
                   href="#/games"
