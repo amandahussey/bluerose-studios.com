@@ -13,11 +13,11 @@ import {
 } from "@mui/material";
 import { ArrowBackRounded } from "@mui/icons-material";
 
-const spotTheDifference1a = "src/assets/spot-the-difference-1a.png";
-const spotTheDifference1b = "src/assets/spot-the-difference-1b.png";
+import spotTheDifference1a from "@assets/spot-the-difference-1a.png";
+import spotTheDifference1b from "@assets/spot-the-difference-1b.png";
 
-const spotTheDifference2a = "src/assets/spot-the-difference-2a.png";
-const spotTheDifference2b = "src/assets/spot-the-difference-2b.png";
+import spotTheDifference2a from "@assets/spot-the-difference-2a.png";
+import spotTheDifference2b from "@assets/spot-the-difference-2b.png";
 
 const DIFFERENCES_1 = [
   {

@@ -19,12 +19,14 @@ import {
   Search,
 } from "@mui/icons-material";
 
-import lolaCover from "src/assets/lola-cover.png";
-import activityPage1 from "src/assets/activity-page-1.png";
-import activityPage2 from "src/assets/activity-page-2.png";
+import lolaCover from "@assets/lola-cover.png";
+import activityPage1 from "@assets/activity-page-1.png";
+import activityPage2 from "@assets/activity-page-2.png";
 
 const AboutLola = () => {
   const theme = useTheme();
+
+  console.log("lolaCover:", lolaCover);
 
   const isSm = useMediaQuery(theme.breakpoints.down(800));
 

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { LinkedIn } from "@mui/icons-material";
 
-import amanda from "src/assets/amanda.jpeg";
+import amanda from "@assets/amanda.jpeg";
 
 const AboutBlueRose = () => {
   const theme = useTheme();

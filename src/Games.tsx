@@ -8,17 +8,19 @@ import {
   Box,
 } from "@mui/material";
 
-const spotTheDiff1a = "src/assets/spot-the-difference-1a.png";
-const spotTheDiff1b = "src/assets/spot-the-difference-1b.png";
-const foldedClothes = "src/assets/folded-clothes.png";
-const toyBox = "src/assets/toy-box.png";
-const sparkle1 = "src/assets/sparkle-1.png";
-const sparkle2 = "src/assets/sparkle-2.png";
+import spotTheDiff1a from "@assets/spot-the-difference-1a.png";
+import spotTheDiff1b from "@assets/spot-the-difference-1b.png";
+import foldedClothes from "@assets/folded-clothes.png";
+import toyBox from "@assets/toy-box.png";
+import sparkle1 from "@assets/sparkle-1.png";
+import sparkle2 from "@assets/sparkle-2.png";
 
 const Games = () => {
   const theme = useTheme();
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
+
+  console.log("spotTheDiff1a:", spotTheDiff1a);
 
   return (
     <Stack
