@@ -39,7 +39,7 @@ const Games = () => {
         <GameCard
           heading1="Spot the Difference:"
           heading2="Lola's Messy Room"
-          subtext="Find all 7 differences!"
+          subtext="Find all the differences!"
           button={{
             text: "Play Now",
             href: "#/games/lola/spot-the-difference",
