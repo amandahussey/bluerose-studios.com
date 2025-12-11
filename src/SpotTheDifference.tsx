@@ -13,10 +13,13 @@ import {
 } from "@mui/material";
 import { MouseEventHandler, useEffect, useState } from "react";
 
+const spotTheDifference1a = "/src/assets/spot-the-difference-1a.png";
+const spotTheDifference1b = "/src/assets/spot-the-difference-1b.png";
+
 const spotTheDifference1 = "/src/assets/spot-the-difference-1.png";
 const spotTheDifference2 = "/src/assets/spot-the-difference-2.png";
 
-const DIFFERENCES = [
+const DIFFERENCES_2 = [
   {
     id: "sailboat",
     x: 0.078,
@@ -67,6 +70,14 @@ const SpotTheDifference = () => {
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const [round, setRound] = useState(2);
+  const images =
+    round === 1
+      ? [spotTheDifference1a, spotTheDifference1b]
+      : [spotTheDifference1, spotTheDifference2];
+
+  console.log("images", images);
+
   const [diffsFound, setDiffsFound] = useState<string[]>([]);
   const numDiffsFound = diffsFound.length;
 
@@ -75,9 +86,10 @@ const SpotTheDifference = () => {
   const handleClose = () => {
     setOpen(false);
     setDiffsFound([]);
-    setIsReloading(true);
+    setRound((prev) => (prev === 1 ? 2 : 1));
+    setIsLoading(true);
   };
-  const [isReloading, setIsReloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (numDiffsFound === 7) {
@@ -86,20 +98,24 @@ const SpotTheDifference = () => {
   }, [numDiffsFound]);
 
   useEffect(() => {
-    if (isReloading) {
+    if (isLoading) {
       const timer = setTimeout(() => {
-        setIsReloading(false);
+        setIsLoading(false);
       }, 2000); // Short delay to simulate reload
       return () => clearTimeout(timer);
     }
-  }, [isReloading]);
+  }, [isLoading]);
+
+  const differencesToCheck = round === 2 ? DIFFERENCES_2 : [];
+  console.log("differencesToCheck", differencesToCheck);
+  console.log("round", round);
 
   const handleClick: MouseEventHandler<HTMLDivElement> = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const clickX = e.clientX - rect.left; // x position within the element.
     const clickY = e.clientY - rect.top; // y position within the element.
 
-    const hit = DIFFERENCES.find((diff) => {
+    const hit = differencesToCheck.find((diff) => {
       const diffX = diff.x * rect.width;
       const diffY = diff.y * rect.height;
       const tolerance = 0.05; // 5% tolerance
@@ -122,7 +138,7 @@ const SpotTheDifference = () => {
     <Stack>
       {isMd && (
         <Typography variant="h6" mb={2} mt={1} textAlign="center">
-          <b>Differences found:</b> {numDiffsFound}/7
+          <b>Differences found:</b> {numDiffsFound}/{differencesToCheck.length}
         </Typography>
       )}
       <Stack
@@ -130,75 +146,47 @@ const SpotTheDifference = () => {
         justifyContent="center"
         spacing={3}
       >
-        <Box position="relative" onClick={handleClick}>
-          <img
-            src={spotTheDifference1}
-            alt={`Spot the Difference - Lola's Messy Room - Image 1`}
-            style={{
-              width: isMd ? "80vw" : "35vw",
-              maxWidth: 500,
-              objectFit: "contain",
-              borderRadius: 4,
-            }}
-          />
-          {DIFFERENCES.map(
-            (diff) =>
-              diffsFound.includes(diff.id) && (
-                <Box
-                  key={diff.id}
-                  sx={{
-                    position: "absolute",
-                    top: `${diff.y * 100}%`,
-                    left: `${diff.x * 100}%`,
-                    transform: "translate(-50%, -50%)",
-                    border: `3px solid gold`,
-                    width: `${12 * diff.aspectRatio}%`,
-                    height: `${12}%`,
-                    boxShadow: 2,
-                    borderRadius: "50%",
-                  }}
-                />
-              )
-          )}
-        </Box>
-
-        {/* Image 2 */}
-        <Box position="relative" onClick={handleClick}>
-          <img
-            src={spotTheDifference2}
-            alt={`Spot the Difference - Lola's Messy Room - Image 2`}
-            style={{
-              width: isMd ? "80vw" : "35vw",
-              maxWidth: 500,
-              objectFit: "contain",
-              borderRadius: 4,
-            }}
-          />
-          {DIFFERENCES.map(
-            (diff) =>
-              diffsFound.includes(diff.id) && (
-                <Box
-                  key={diff.id}
-                  sx={{
-                    position: "absolute",
-                    top: `${diff.y * 100}%`,
-                    left: `${diff.x * 100}%`,
-                    transform: "translate(-50%, -50%)",
-                    border: `3px solid gold`,
-                    width: `${12 * diff.aspectRatio}%`,
-                    height: `${12}%`,
-                    boxShadow: 2,
-                    borderRadius: "50%",
-                  }}
-                />
-              )
-          )}
-        </Box>
+        {images.map((src, index) => (
+          <Box key={index} position="relative" onClick={handleClick}>
+            <img
+              src={src}
+              alt={`Spot the Difference - Lola's Messy Room - Image ${
+                index + 1
+              }`}
+              style={{
+                width: isMd ? "80vw" : "35vw",
+                maxWidth: 500,
+                objectFit: "contain",
+                borderRadius: 4,
+              }}
+            />
+            {differencesToCheck.map(
+              (diff) =>
+                diffsFound.includes(diff.id) && (
+                  <Box
+                    key={diff.id}
+                    sx={{
+                      position: "absolute",
+                      top: `${diff.y * 100}%`,
+                      left: `${diff.x * 100}%`,
+                      transform: "translate(-50%, -50%)",
+                      border: `3px solid gold`,
+                      width: `${12 * diff.aspectRatio}%`,
+                      height: `${12}%`,
+                      boxShadow: 2,
+                      borderRadius: "50%",
+                    }}
+                  />
+                )
+            )}
+          </Box>
+        ))}
       </Stack>
       {!isMd && (
         <Box>
           <Typography variant="h6" textAlign="right" mt={3}>
-            <b>Differences found:</b> {numDiffsFound}/7
+            <b>Differences found:</b> {numDiffsFound}/
+            {differencesToCheck.length}
           </Typography>
         </Box>
       )}
@@ -227,7 +215,9 @@ const SpotTheDifference = () => {
         <Stack spacing={1} textAlign="center" pt={3}>
           <Typography variant="h4">Spot the Difference</Typography>
           <Typography variant="h6">Lola's Messy Room</Typography>
-          <Typography variant="h6">Tap all 7 differences to win!</Typography>
+          <Typography variant="h6">
+            Tap all {differencesToCheck.length} differences to win!
+          </Typography>
         </Stack>
 
         <Stack
@@ -237,7 +227,7 @@ const SpotTheDifference = () => {
           alignItems="center"
           height="100%"
         >
-          {isReloading ? (
+          {isLoading ? (
             <Box position="relative">
               <Skeleton variant="rounded">{gameSpace}</Skeleton>
               <Box
@@ -250,7 +240,7 @@ const SpotTheDifference = () => {
               >
                 <Stack justifyContent="center" alignItems="center" spacing={4}>
                   <CircularProgress color="secondary" />
-                  <Typography>Reloading...</Typography>
+                  <Typography>Loading...</Typography>
                 </Stack>
               </Box>
             </Box>
