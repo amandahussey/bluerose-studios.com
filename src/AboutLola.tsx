@@ -11,9 +11,6 @@ import {
   IconButton,
   Popover,
 } from "@mui/material";
-import lolaCover from "/lola-cover.png";
-import activityPage1 from "/activity-page-1.png";
-import activityPage2 from "/activity-page-2.png";
 import {
   ArrowBackIosRounded,
   ArrowForwardIosRounded,
@@ -21,6 +18,10 @@ import {
   CloseRounded,
   Search,
 } from "@mui/icons-material";
+
+import lolaCover from "/src/assets/lola-cover.png";
+import activityPage1 from "/src/assets/activity-page-1.png";
+import activityPage2 from "/src/assets/activity-page-2.png";
 
 const AboutLola = () => {
   const theme = useTheme();

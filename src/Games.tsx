@@ -8,12 +8,12 @@ import {
   Box,
 } from "@mui/material";
 
-const spotTheDiff1 = "/spot-the-difference-1.png";
-const spotTheDiff2 = "/spot-the-difference-2.png";
-const foldedClothes = "/folded-clothes.png";
-const toyBox = "/toy-box.png";
-const sparkle1 = "/sparkle-1.png";
-const sparkle2 = "/sparkle-2.png";
+const spotTheDiff1 = "/src/assets/spot-the-difference-1.png";
+const spotTheDiff2 = "/src/assets/spot-the-difference-2.png";
+const foldedClothes = "/src/assets/folded-clothes.png";
+const toyBox = "/src/assets/toy-box.png";
+const sparkle1 = "/src/assets/sparkle-1.png";
+const sparkle2 = "/src/assets/sparkle-2.png";
 
 const Games = () => {
   const theme = useTheme();

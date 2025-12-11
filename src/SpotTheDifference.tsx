@@ -13,8 +13,8 @@ import {
 } from "@mui/material";
 import { MouseEventHandler, useEffect, useState } from "react";
 
-const spotTheDifference1 = "/spot-the-difference-1.png";
-const spotTheDifference2 = "/spot-the-difference-2.png";
+const spotTheDifference1 = "/src/assets/spot-the-difference-1.png";
+const spotTheDifference2 = "/src/assets/spot-the-difference-2.png";
 
 const DIFFERENCES = [
   {

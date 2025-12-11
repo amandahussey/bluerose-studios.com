@@ -10,9 +10,9 @@ import {
 import { ArrowRightAltRounded } from "@mui/icons-material";
 
 import bluerose from "/blue-rose.png";
-import sparkle1 from "/sparkle-1.png";
-import sparkle2 from "/sparkle-2.png";
-import lolaCover from "/lola-cover.png";
+import sparkle1 from "/src/assets/sparkle-1.png";
+import sparkle2 from "/src/assets/sparkle-2.png";
+import lolaCover from "/src/assets/lola-cover.png";
 
 import "./Landing.css";
 
