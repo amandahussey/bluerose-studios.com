@@ -19,6 +19,39 @@ const spotTheDifference1b = "/src/assets/spot-the-difference-1b.png";
 const spotTheDifference1 = "/src/assets/spot-the-difference-1.png";
 const spotTheDifference2 = "/src/assets/spot-the-difference-2.png";
 
+const DIFFERENCES_1 = [
+  {
+    id: "turkey-drawing",
+    x: 0.1,
+    y: 0.19,
+    aspectRatio: 1,
+  },
+  {
+    id: "drawer",
+    x: 0.8,
+    y: 0.31,
+    aspectRatio: 2,
+  },
+  {
+    id: "bed-sweater",
+    x: 0.6,
+    y: 0.48,
+    aspectRatio: 1.5,
+  },
+  {
+    id: "tissue-box",
+    x: 0.075,
+    y: 0.425,
+    aspectRatio: 1.2,
+  },
+  {
+    id: "sock",
+    x: 0.79,
+    y: 0.48,
+    aspectRatio: 0.8,
+  },
+];
+
 const DIFFERENCES_2 = [
   {
     id: "sailboat",
@@ -70,13 +103,12 @@ const SpotTheDifference = () => {
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [round, setRound] = useState(2);
+  const [round, setRound] = useState(1);
   const images =
     round === 1
       ? [spotTheDifference1a, spotTheDifference1b]
       : [spotTheDifference1, spotTheDifference2];
-
-  console.log("images", images);
+  const differencesToCheck = round === 1 ? DIFFERENCES_1 : DIFFERENCES_2;
 
   const [diffsFound, setDiffsFound] = useState<string[]>([]);
   const numDiffsFound = diffsFound.length;
@@ -92,10 +124,10 @@ const SpotTheDifference = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (numDiffsFound === 7) {
+    if (numDiffsFound === differencesToCheck.length) {
       handleOpen();
     }
-  }, [numDiffsFound]);
+  }, [numDiffsFound, differencesToCheck.length]);
 
   useEffect(() => {
     if (isLoading) {
@@ -105,10 +137,6 @@ const SpotTheDifference = () => {
       return () => clearTimeout(timer);
     }
   }, [isLoading]);
-
-  const differencesToCheck = round === 2 ? DIFFERENCES_2 : [];
-  console.log("differencesToCheck", differencesToCheck);
-  console.log("round", round);
 
   const handleClick: MouseEventHandler<HTMLDivElement> = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -160,6 +188,7 @@ const SpotTheDifference = () => {
                 borderRadius: 4,
               }}
             />
+
             {differencesToCheck.map(
               (diff) =>
                 diffsFound.includes(diff.id) && (
