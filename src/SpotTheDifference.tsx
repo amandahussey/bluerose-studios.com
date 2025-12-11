@@ -321,7 +321,9 @@ const SpotTheDifference = () => {
             Congratulations!
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            You win!
+            {round === 1
+              ? "You win the first round! Get ready for round 2."
+              : "You found all the differences! Great job!"}
           </Typography>
         </Box>
       </Modal>
