@@ -20,6 +20,9 @@ import {
   ArrowForwardIosRounded,
   ArrowRightAltRounded,
   CloseRounded,
+  Preview,
+  PreviewRounded,
+  Search,
 } from "@mui/icons-material";
 
 const AboutLola = () => {
@@ -150,31 +153,64 @@ const AboutLola = () => {
 
           {/* Buttons Row Container - Mobile */}
           {isSm && (
-            <Stack
-              direction="row"
-              spacing={2}
-              justifyContent={isSm ? "center" : "flex-start"}
-            >
-              <Button
-                variant="contained"
-                color="secondary"
-                // style={{
-                //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
-                // }}
+            <Stack spacing={3}>
+              <Stack
+                direction="row"
+                spacing={2}
+                justifyContent={isSm ? "center" : "flex-start"}
               >
-                Buy Book
-              </Button>
-              <Button
-                variant="contained"
-                href="#/games"
-                endIcon={<ArrowRightAltRounded />}
-                color="primary"
-                // style={{
-                //   background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 50%, ${theme.palette.secondary.light})`,
-                // }}
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  // style={
+                  //   !isSm
+                  //     ? {}
+                  //     : {
+                  //         background: `linear-gradient(to right, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
+                  //       }
+                  // }
+                >
+                  Buy Book
+                </Button>
+                <Button
+                  variant="contained"
+                  href="#/games"
+                  endIcon={<ArrowRightAltRounded />}
+                  color="primary"
+                  // style={
+                  //   !isSm
+                  //     ? {}
+                  //     : {
+                  //         background: `linear-gradient(to right bottom, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                  //       }
+                  // }
+                >
+                  Play Games
+                </Button>
+              </Stack>
+              <Stack
+                justifyContent="space-between"
+                alignItems="center"
+                spacing={isSm ? 3 : 0}
               >
-                Play Games
-              </Button>
+                {/* Preview Bonus Activity - Button */}
+                <Box>
+                  <Button
+                    variant="contained"
+                    onClick={handleOpen}
+                    startIcon={<Search />}
+                    style={
+                      !isSm
+                        ? {}
+                        : {
+                            background: `linear-gradient(to bottom, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                          }
+                    }
+                  >
+                    Preview Bonus Activity
+                  </Button>
+                </Box>
+              </Stack>
             </Stack>
           )}
 
@@ -198,96 +234,106 @@ const AboutLola = () => {
               </Typography>
             </Stack>
 
-            <Stack
-              direction={isSm ? "column" : "row"}
-              justifyContent="space-between"
-              alignItems="center"
-              spacing={isSm ? 3 : 0}
-            >
+            {isSm && (
               <Typography variant="h6" fontWeight="bold" flexBasis="60%">
                 Bonus activity included at the end of the book that turns room
                 cleaning into a playful adventure!
               </Typography>
+            )}
 
-              {/* Preview Bonus Activity - Button */}
-              <Box>
-                <Button variant="contained" onClick={handleOpen}>
-                  Preview Bonus Activity
-                </Button>
-              </Box>
-              {/* Preview Bonus Activity - Modal */}
-              <Modal open={open} onClose={handleClose}>
-                <Box
+            {!isSm && (
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                spacing={isSm ? 3 : 0}
+              >
+                <Typography variant="h6" fontWeight="bold" flexBasis="60%">
+                  Bonus activity included at the end of the book that turns room
+                  cleaning into a playful adventure!
+                </Typography>
+
+                {/* Preview Bonus Activity - Button */}
+                <Box>
+                  <Button variant="contained" onClick={handleOpen}>
+                    Preview Bonus Activity
+                  </Button>
+                </Box>
+              </Stack>
+            )}
+
+            {/* Preview Bonus Activity - Modal */}
+            <Modal open={open} onClose={handleClose}>
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  boxShadow: 4,
+                  background: theme.palette.background.paper,
+                  borderRadius: 4,
+                  py: 6,
+                }}
+              >
+                <IconButton
+                  size={isSm ? "small" : "medium"}
                   sx={{
                     position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    boxShadow: 4,
-                    background: theme.palette.background.paper,
-                    borderRadius: 4,
-                    py: 6,
+                    top: 4,
+                    right: 4,
                   }}
+                  onClick={handleClose}
                 >
+                  <CloseRounded />
+                </IconButton>
+                <Stack direction="row" alignItems="center">
                   <IconButton
                     size={isSm ? "small" : "medium"}
                     sx={{
-                      position: "absolute",
-                      top: 4,
-                      right: 4,
+                      visibility:
+                        currentActivityPage === activityPage1
+                          ? "hidden"
+                          : "visible",
                     }}
-                    onClick={handleClose}
+                    onClick={() => {
+                      setCurrentActivityPage(activityPage1);
+                    }}
                   >
-                    <CloseRounded />
+                    <ArrowBackIosRounded />
                   </IconButton>
-                  <Stack direction="row" alignItems="center">
+
+                  <img
+                    src={currentActivityPage}
+                    alt={`Activity page ${
+                      currentActivityPage === activityPage1 ? "1" : "2"
+                    } from Lola and the Lost Ring`}
+                    style={{
+                      height: isSm ? "auto" : "80vh",
+                      width: isSm ? "80vw" : "auto",
+                      objectFit: "contain",
+                      borderRadius: 4,
+                    }}
+                  />
+                  <Box>
                     <IconButton
                       size={isSm ? "small" : "medium"}
                       sx={{
                         visibility:
-                          currentActivityPage === activityPage1
+                          currentActivityPage === activityPage2
                             ? "hidden"
                             : "visible",
                       }}
                       onClick={() => {
-                        setCurrentActivityPage(activityPage1);
+                        setCurrentActivityPage(activityPage2);
                       }}
                     >
-                      <ArrowBackIosRounded />
+                      <ArrowForwardIosRounded />
                     </IconButton>
-
-                    <img
-                      src={currentActivityPage}
-                      alt={`Activity page ${
-                        currentActivityPage === activityPage1 ? "1" : "2"
-                      } from Lola and the Lost Ring`}
-                      style={{
-                        height: isSm ? "auto" : "80vh",
-                        width: isSm ? "80vw" : "auto",
-                        objectFit: "contain",
-                        borderRadius: 4,
-                      }}
-                    />
-                    <Box>
-                      <IconButton
-                        size={isSm ? "small" : "medium"}
-                        sx={{
-                          visibility:
-                            currentActivityPage === activityPage2
-                              ? "hidden"
-                              : "visible",
-                        }}
-                        onClick={() => {
-                          setCurrentActivityPage(activityPage2);
-                        }}
-                      >
-                        <ArrowForwardIosRounded />
-                      </IconButton>
-                    </Box>
-                  </Stack>
-                </Box>
-              </Modal>
-            </Stack>
+                  </Box>
+                </Stack>
+              </Box>
+            </Modal>
           </Stack>
         </Stack>
       </Container>
