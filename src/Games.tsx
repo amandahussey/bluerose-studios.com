@@ -20,8 +20,6 @@ const Games = () => {
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
 
-  console.log("spotTheDiff1a:", spotTheDiff1a);
-
   return (
     <Stack
       flexGrow={1}

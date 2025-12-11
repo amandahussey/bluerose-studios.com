@@ -26,8 +26,6 @@ import activityPage2 from "@assets/activity-page-2.png";
 const AboutLola = () => {
   const theme = useTheme();
 
-  console.log("lolaCover:", lolaCover);
-
   const isSm = useMediaQuery(theme.breakpoints.down(800));
 
   const [currentActivityPage, setCurrentActivityPage] = useState(activityPage1);

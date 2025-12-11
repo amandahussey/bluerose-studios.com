@@ -334,7 +334,11 @@ const SpotTheDifference = () => {
                 You win the first round! <br /> Are you ready for another
                 challenge?
               </Typography>
-              <Stack direction="row" justifyContent="center" spacing={3}>
+              <Stack
+                direction={isSm ? "column" : "row"}
+                justifyContent="center"
+                spacing={3}
+              >
                 <Button
                   variant="contained"
                   color="primary"
@@ -343,6 +347,7 @@ const SpotTheDifference = () => {
                 >
                   Back to Games
                 </Button>
+
                 <Button
                   variant="contained"
                   color="secondary"
@@ -358,7 +363,11 @@ const SpotTheDifference = () => {
                 You found all the differences! Great job! <br /> Want to play
                 again?
               </Typography>
-              <Stack direction="row" justifyContent="center" spacing={3}>
+              <Stack
+                direction={isSm ? "column" : "row"}
+                justifyContent="center"
+                spacing={3}
+              >
                 <Button
                   variant="contained"
                   color="primary"
@@ -367,6 +376,7 @@ const SpotTheDifference = () => {
                 >
                   Back to Games
                 </Button>
+
                 <Button
                   variant="contained"
                   color="secondary"
