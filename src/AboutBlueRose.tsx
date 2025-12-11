@@ -70,15 +70,16 @@ const AboutBlueRose = () => {
 
             {/* Details */}
             <Typography>
-              Blue Rose Studios is home to an emerging world of stories and
-              games that inspire the little kid in me, and hopefully you, too 😊
+              Blue Rose Studios is where all of my creations live together.
             </Typography>
+
             <Typography>
-              As a kid, my world was filled with big feelings and big adventures
-              that lived mostly in my head. Blue Rose Studios is where I turn
-              those memories into something playful, meaningful, and alive.
+              As a kid, I loved reading books and playing games that made me
+              feel like I was part of the adventure. Now, I get to create those
+              worlds for other kids to explore and enjoy.
             </Typography>
-            <Typography>I hope you find a bit of magic here ✨</Typography>
+
+            <Typography>May a little magic find you here. ✨</Typography>
 
             {/* LinkedIn  */}
             <Box alignSelf="center">
