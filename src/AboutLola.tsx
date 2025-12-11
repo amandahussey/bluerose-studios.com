@@ -97,7 +97,16 @@ const AboutLola = () => {
                   spacing={2}
                   justifyContent={isSm ? "center" : "flex-start"}
                 >
-                  <Tooltip title="Coming soon!">
+                  <Tooltip
+                    title="Coming soon!"
+                    slotProps={{
+                      tooltip: {
+                        sx: {
+                          backgroundColor: theme.palette.secondary.main,
+                        },
+                      },
+                    }}
+                  >
                     <Button
                       variant="contained"
                       color="secondary"
