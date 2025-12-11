@@ -19,38 +19,45 @@ const spotTheDifference2 = "/spot-the-difference-2.png";
 const DIFFERENCES = [
   {
     id: "sailboat",
-    x: 0.075,
-    y: 0.4,
+    x: 0.078,
+    y: 0.41,
+    aspectRatio: 0.9,
   },
   {
     id: "bird",
     x: 0.67,
     y: 0.045,
+    aspectRatio: 1.5,
   },
   {
     id: "ball",
     x: 0.935,
-    y: 0.73,
+    y: 0.72,
+    aspectRatio: 0.9,
   },
   {
     id: "pencil-ground",
     x: 0.565,
     y: 0.745,
+    aspectRatio: 1.5,
   },
   {
     id: "coloring-book",
     x: 0.2,
     y: 0.74,
+    aspectRatio: 1,
   },
   {
     id: "sweater-chair",
     x: 0.42,
     y: 0.35,
+    aspectRatio: 0.8,
   },
   {
     id: "pencil-desk",
     x: 0.655,
     y: 0.375,
+    aspectRatio: 1.5,
   },
 ];
 
@@ -109,7 +116,7 @@ const SpotTheDifference = () => {
             const hit = DIFFERENCES.find((diff) => {
               const diffX = diff.x * rect.width;
               const diffY = diff.y * rect.height;
-              const tolerance = 60; // pixels
+              const tolerance = 70; // pixels
 
               return (
                 clickX >= diffX - tolerance &&
@@ -119,7 +126,6 @@ const SpotTheDifference = () => {
               );
             });
             if (hit) {
-              console.log("hit!", hit.id);
               setDiffsFound((prev) =>
                 prev.includes(hit.id) ? prev : [...prev, hit.id]
               );
@@ -136,86 +142,25 @@ const SpotTheDifference = () => {
               borderRadius: 4,
             }}
           />
-          {/* Sailboat */}
-          <Box
-            sx={{
-              position: "absolute",
-              top: "40%",
-              left: "7.5%",
-              background: "red",
-              width: 2,
-              height: 2,
-            }}
-          />
-          {/* Bird */}
-          <Box
-            sx={{
-              position: "absolute",
-              top: "4.5%",
-              right: "33%",
-              background: "red",
-              width: 2,
-              height: 2,
-            }}
-          />
-          {/* Ball */}
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "27%",
-              right: "6.5%",
-              background: "red",
-              width: 2,
-              height: 2,
-            }}
-          />
-          {/* Pencil on ground */}
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "25.5%",
-              right: "43%",
-              background: "red",
-              width: 2,
-              height: 2,
-            }}
-          />
-          {/* Coloring book */}
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "26%",
-              left: "20%",
-              background: "red",
-              width: 2,
-              height: 2,
-            }}
-          />
-          {/* Sweater on chair */}
-          <Box
-            sx={{
-              position: "absolute",
-              opacity: 0.5,
-              top: "35%",
-              left: "42%",
-              background: "red",
-              width: 2,
-              height: 2,
-            }}
-          />
-
-          {/* Pencil on desk */}
-          <Box
-            sx={{
-              position: "absolute",
-              opacity: 0.5,
-              top: "37.5%",
-              right: "34.5%",
-              background: "red",
-              width: 2,
-              height: 2,
-            }}
-          />
+          {DIFFERENCES.map(
+            (diff) =>
+              diffsFound.includes(diff.id) && (
+                <Box
+                  key={diff.id}
+                  sx={{
+                    position: "absolute",
+                    top: `${diff.y * 100}%`,
+                    left: `${diff.x * 100}%`,
+                    transform: "translate(-50%, -50%)",
+                    border: `3px solid gold`,
+                    width: `${12 * diff.aspectRatio}%`,
+                    height: `${12}%`,
+                    boxShadow: 2,
+                    borderRadius: "50%",
+                  }}
+                />
+              )
+          )}
         </Box>
 
         <img
