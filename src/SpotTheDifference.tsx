@@ -1,4 +1,4 @@
-import { ArrowBackRounded } from "@mui/icons-material";
+import { MouseEventHandler, useEffect, useState } from "react";
 import {
   Stack,
   Typography,
@@ -11,7 +11,7 @@ import {
   Button,
   Container,
 } from "@mui/material";
-import { MouseEventHandler, useEffect, useState } from "react";
+import { ArrowBackRounded } from "@mui/icons-material";
 
 const spotTheDifference1a = "/src/assets/spot-the-difference-1a.png";
 const spotTheDifference1b = "/src/assets/spot-the-difference-1b.png";
@@ -114,7 +114,9 @@ const SpotTheDifference = () => {
   const numDiffsFound = diffsFound.length;
 
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    setOpen(true);
+  };
   const handleClose = () => {
     setOpen(false);
     setDiffsFound([]);
@@ -317,14 +319,63 @@ const SpotTheDifference = () => {
             boxShadow: `0 0 10px ${theme.palette.secondary.light}`,
           }}
         >
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            sx={{ mb: 2 }}
+          >
             Congratulations!
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {round === 1
-              ? "You win the first round! Get ready for round 2."
-              : "You found all the differences! Great job!"}
-          </Typography>
+          {round === 1 ? (
+            <Stack spacing={3}>
+              <Typography id="modal-modal-description" sx={{ my: 2 }}>
+                You win the first round! <br /> Are you ready for another
+                challenge?
+              </Typography>
+              <Stack direction="row" justifyContent="center" spacing={3}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  startIcon={<ArrowBackRounded />}
+                  href="#/games"
+                >
+                  Back to Games
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={handleClose}
+                >
+                  I'm ready!
+                </Button>
+              </Stack>
+            </Stack>
+          ) : (
+            <Stack spacing={3}>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                You found all the differences! Great job! <br /> Want to play
+                again?
+              </Typography>
+              <Stack direction="row" justifyContent="center" spacing={3}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  startIcon={<ArrowBackRounded />}
+                  href="#/games"
+                >
+                  Back to Games
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={handleClose}
+                >
+                  Play Again!
+                </Button>
+              </Stack>
+            </Stack>
+          )}
         </Box>
       </Modal>
     </Stack>
