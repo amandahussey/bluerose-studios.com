@@ -13,9 +13,8 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-
-import bluerose from "/blue-rose.png";
 import { Instagram } from "@mui/icons-material";
+import bluerose from "/blue-rose.png";
 
 function Nav() {
   const [anchorElBooks, setAnchorElBooks] = React.useState<null | HTMLElement>(
