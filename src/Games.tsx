@@ -8,8 +8,8 @@ import {
   Box,
 } from "@mui/material";
 
-const spotTheDiff1 = "/src/assets/spot-the-difference-1.png";
-const spotTheDiff2 = "/src/assets/spot-the-difference-2.png";
+const spotTheDiff1a = "/src/assets/spot-the-difference-1a.png";
+const spotTheDiff1b = "/src/assets/spot-the-difference-1b.png";
 const foldedClothes = "/src/assets/folded-clothes.png";
 const toyBox = "/src/assets/toy-box.png";
 const sparkle1 = "/src/assets/sparkle-1.png";
@@ -52,7 +52,7 @@ const Games = () => {
               spacing={1}
             >
               <img
-                src={spotTheDiff1}
+                src={spotTheDiff1a}
                 alt="Spot the Difference Game Preview - Image 1"
                 style={{
                   width: isSm ? "37vw" : "45%",
@@ -63,7 +63,7 @@ const Games = () => {
                 }}
               />
               <img
-                src={spotTheDiff2}
+                src={spotTheDiff1b}
                 alt="Spot the Difference Game Preview - Image 2"
                 style={{
                   width: isSm ? "37vw" : "45%",
