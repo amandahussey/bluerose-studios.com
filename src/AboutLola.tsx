@@ -41,9 +41,6 @@ const AboutLola = () => {
 
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
-  const handleOpenTooltip = () => {
-    setTooltipOpen(true);
-  };
   const handleCloseTooltip = () => {
     setTooltipOpen(false);
   };
