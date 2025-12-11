@@ -10,6 +10,7 @@ import {
   Modal,
   IconButton,
   Tooltip,
+  ClickAwayListener,
 } from "@mui/material";
 import lolaCover from "/lola-cover.png";
 import activityPage1 from "/activity-page-1.png";
@@ -37,6 +38,18 @@ const AboutLola = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
+  const handleOpenTooltip = () => {
+    setTooltipOpen(true);
+  };
+  const handleCloseTooltip = () => {
+    setTooltipOpen(false);
+  };
+  const handleToggleTooltip = () => {
+    setTooltipOpen((prev) => !prev);
+  };
 
   return (
     <Stack
@@ -92,44 +105,48 @@ const AboutLola = () => {
 
               {/* Buttons Row Container - Desktop */}
               {!isSm && (
-                <Stack
-                  direction="row"
-                  spacing={2}
-                  justifyContent={isSm ? "center" : "flex-start"}
-                >
-                  <Tooltip
-                    title="Coming soon!"
-                    slotProps={{
-                      tooltip: {
-                        sx: {
-                          backgroundColor: theme.palette.secondary.main,
-                        },
-                      },
-                    }}
+                <ClickAwayListener onClickAway={handleCloseTooltip}>
+                  <Stack
+                    direction="row"
+                    spacing={2}
+                    justifyContent={isSm ? "center" : "flex-start"}
                   >
+                    <Tooltip
+                      open={tooltipOpen}
+                      title="Coming soon!"
+                      slotProps={{
+                        tooltip: {
+                          sx: {
+                            backgroundColor: theme.palette.secondary.main,
+                          },
+                        },
+                      }}
+                    >
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={handleToggleTooltip}
+                        // style={{
+                        //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
+                        // }}
+                      >
+                        Buy Book
+                      </Button>
+                    </Tooltip>
+
                     <Button
                       variant="contained"
-                      color="secondary"
+                      href="#/games"
+                      endIcon={<ArrowRightAltRounded />}
+                      color="primary"
                       // style={{
-                      //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
+                      //   background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 30%, ${theme.palette.primary.light})`,
                       // }}
                     >
-                      Buy Book
+                      Play Games
                     </Button>
-                  </Tooltip>
-
-                  <Button
-                    variant="contained"
-                    href="#/games"
-                    endIcon={<ArrowRightAltRounded />}
-                    color="primary"
-                    // style={{
-                    //   background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 30%, ${theme.palette.primary.light})`,
-                    // }}
-                  >
-                    Play Games
-                  </Button>
-                </Stack>
+                  </Stack>
+                </ClickAwayListener>
               )}
             </Stack>
           </Stack>
