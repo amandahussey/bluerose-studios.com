@@ -261,7 +261,7 @@ const AboutLola = () => {
             {isSm && (
               <Typography variant="h6" fontWeight="bold" flexBasis="60%">
                 Bonus activity included at the end of the book that turns room
-                cleaning into a playful adventure!
+                cleaning into into a game of discovery!
               </Typography>
             )}
 
