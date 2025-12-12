@@ -208,7 +208,7 @@ const SpotTheDifference = () => {
                       height: `${
                         diff.aspectRatio > 1 ? 12 : 12 / diff.aspectRatio
                       }%`,
-                      boxShadow: 2,
+                      boxShadow: 5,
                       borderRadius: "50%",
                     }}
                   />
