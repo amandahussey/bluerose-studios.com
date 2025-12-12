@@ -42,10 +42,10 @@ const AboutBlueRose = () => {
 
               {/* Snippet */}
               <Stack spacing={textWraps ? 2 : 0}>
+                <Typography>Creator of Blue Rose Studios.</Typography>
                 <Typography>
                   Author, illustrator, and software engineer.
                 </Typography>
-                <Typography>Creator of Blue Rose Studios.</Typography>
               </Stack>
             </Stack>
 
@@ -70,7 +70,7 @@ const AboutBlueRose = () => {
               built for play and meant to be felt.
             </Typography>
 
-            <Typography variant="h5">Welcome ✨</Typography>
+            <Typography variant="h5">Welcome 🪄</Typography>
           </Stack>
         </Stack>
       </Container>
