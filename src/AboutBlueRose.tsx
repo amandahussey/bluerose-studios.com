@@ -4,10 +4,8 @@ import {
   useTheme,
   useMediaQuery,
   Container,
-  IconButton,
   Box,
 } from "@mui/material";
-import { LinkedIn } from "@mui/icons-material";
 
 import amanda from "@assets/amanda.jpeg";
 
@@ -39,17 +37,15 @@ const AboutBlueRose = () => {
             <Stack spacing={2}>
               {/* "Hi, I'm Amanda" big text */}
               <Typography fontWeight="bold" variant="h4">
-                Hi! I'm Amanda
+                Hi! I'm Amanda.
               </Typography>
 
+              {/* Snippet */}
               <Stack spacing={textWraps ? 2 : 0}>
-                {/* Snippet */}
                 <Typography>
-                  author, illustrator, and software engineer
+                  Author, illustrator, and software engineer.
                 </Typography>
-                <Typography>
-                  creating stories and games inspired by little me
-                </Typography>
+                <Typography>Creator of Blue Rose Studios.</Typography>
               </Stack>
             </Stack>
 
@@ -70,26 +66,11 @@ const AboutBlueRose = () => {
 
             {/* Details */}
             <Typography>
-              Blue Rose Studios is where all of my creations live together.
+              Blue Rose Studios is an independent studio for stories and games
+              that are fun to read and meant to be felt.
             </Typography>
 
-            <Typography>
-              As a kid, I loved reading books and playing games that made me
-              feel like I was part of the adventure. Now, I get to create those
-              worlds for other kids to explore and enjoy.
-            </Typography>
-
-            <Typography>May a little magic find you here. ✨</Typography>
-
-            {/* LinkedIn  */}
-            <Box alignSelf="center">
-              <IconButton
-                href="https://www.linkedin.com/in/amanda-k-hussey/"
-                target="_blank"
-              >
-                <LinkedIn />
-              </IconButton>
-            </Box>
+            <Typography variant="h5">Welcome ✨</Typography>
           </Stack>
         </Stack>
       </Container>
