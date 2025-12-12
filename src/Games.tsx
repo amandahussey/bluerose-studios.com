@@ -82,7 +82,7 @@ const Games = () => {
           subtext={
             <Typography>
               Swipe to fold, tap to tidy! <br />
-              Help Lola clean her room!
+              Help Lola clean to find the ring!
             </Typography>
           }
           // button={{ text: "Learn More", href: "#" }}
