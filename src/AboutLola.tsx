@@ -253,9 +253,9 @@ const AboutLola = () => {
               </Typography>
 
               <Typography>
-                A story about feeling overwhelmed in a mess, and finding comfort
-                with someone there to help. And the victory of finding what was
-                once lost!
+                A story about feeling overwhelmed in a mess, having someone
+                there to help, and celebrating the joy of finding what was once
+                lost.
               </Typography>
             </Stack>
 
