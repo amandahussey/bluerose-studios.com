@@ -66,11 +66,11 @@ const AboutBlueRose = () => {
 
             {/* Details */}
             <Typography>
-              Blue Rose Studios is an independent studio for stories and games
-              built for play and meant to be felt.
+              Blue Rose Studios is where I create the stories and games that I
+              would read and play if I were a kid.
             </Typography>
 
-            <Typography variant="h5">Welcome 🪄</Typography>
+            <Typography variant="h5">✨</Typography>
           </Stack>
         </Stack>
       </Container>
