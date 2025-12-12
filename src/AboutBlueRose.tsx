@@ -67,7 +67,7 @@ const AboutBlueRose = () => {
             {/* Details */}
             <Typography>
               Blue Rose Studios is where I create the stories and games that I
-              would read and play if I were a kid.
+              would like as a kid.
             </Typography>
 
             <Typography variant="h5">✨</Typography>
