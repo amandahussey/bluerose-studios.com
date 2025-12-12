@@ -80,6 +80,9 @@ const AboutLola = () => {
     </Popover>
   );
 
+  const bonusActivityText =
+    "Bonus activity included at the end of the book that turns room cleaning into into a game of discovery!";
+
   return (
     <Stack
       p={isSm ? 4 : 8}
@@ -252,16 +255,25 @@ const AboutLola = () => {
                 find it.
               </Typography>
 
-              <Typography>
-                A story about feeling stuck in a mess, having someone there to
-                help, and finding what was once lost.
-              </Typography>
+              {isSm ? (
+                <Typography>
+                  A story about feeling stuck in a mess, having someone there to
+                  help, and finding what was once lost.
+                  <br />
+                  <br />
+                  💫
+                </Typography>
+              ) : (
+                <Typography>
+                  A story about feeling stuck in a mess, having someone there to
+                  help, and finding what was once lost.
+                </Typography>
+              )}
             </Stack>
 
             {isSm && (
-              <Typography variant="h6" fontWeight="bold" flexBasis="60%">
-                Bonus activity included at the end of the book that turns room
-                cleaning into into a game of discovery!
+              <Typography variant="caption" fontWeight="bold" flexBasis="60%">
+                {bonusActivityText}
               </Typography>
             )}
 
@@ -271,10 +283,10 @@ const AboutLola = () => {
                 justifyContent="space-between"
                 alignItems="center"
                 spacing={isSm ? 3 : 0}
+                pt={1}
               >
-                <Typography variant="h6" fontWeight="bold" flexBasis="60%">
-                  Bonus activity included at the end of the book that turns room
-                  cleaning into a playful adventure!
+                <Typography variant="subtitle2" flexBasis="60%">
+                  💫 {bonusActivityText}
                 </Typography>
 
                 {/* Preview Bonus Activity - Button */}
