@@ -184,7 +184,7 @@ const SpotTheDifference = () => {
                 index + 1
               }`}
               style={{
-                width: isMd ? "90vw" : "35vw",
+                width: isMd ? (round === 1 ? "85vw" : "90vw") : "35vw",
                 maxWidth: 500,
                 objectFit: "contain",
                 borderRadius: 4,
