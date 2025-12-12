@@ -28,7 +28,7 @@ function Nav() {
   };
 
   const theme = useTheme();
-  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSm = useMediaQuery(theme.breakpoints.down(666));
 
   return (
     <Container maxWidth="xl">
@@ -54,23 +54,24 @@ function Nav() {
               />
             </Link>
 
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", sm: "flex" },
-                fontFamily: "American Typewriter",
-                fontWeight: 400,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              blue rose studios
-            </Typography>
+            {!isSm && (
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
+                sx={{
+                  mr: 2,
+                  fontFamily: "American Typewriter",
+                  fontWeight: 400,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                blue rose studios
+              </Typography>
+            )}
           </Stack>
 
           {/* Buttons */}
