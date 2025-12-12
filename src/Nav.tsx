@@ -28,7 +28,7 @@ function Nav() {
   };
 
   const theme = useTheme();
-  const isSm = useMediaQuery(theme.breakpoints.down(666));
+  const isSm = useMediaQuery(theme.breakpoints.down(667));
 
   return (
     <Container maxWidth="xl">

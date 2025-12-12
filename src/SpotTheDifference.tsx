@@ -184,7 +184,7 @@ const SpotTheDifference = () => {
                 index + 1
               }`}
               style={{
-                width: isMd ? "80vw" : "35vw",
+                width: isMd ? "90vw" : "35vw",
                 maxWidth: 500,
                 objectFit: "contain",
                 borderRadius: 4,
@@ -243,7 +243,7 @@ const SpotTheDifference = () => {
       </Container>
 
       <Stack flexGrow={1} justifyContent="center">
-        <Stack spacing={1} textAlign="center" pt={3}>
+        <Stack spacing={isSm ? 3 : 2} textAlign="center" pt={3} mx={2}>
           <Typography variant="h4">Spot the Difference</Typography>
           <Typography variant="h6">Lola's Messy Room</Typography>
           <Typography variant="h6">
