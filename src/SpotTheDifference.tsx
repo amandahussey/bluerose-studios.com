@@ -22,33 +22,33 @@ import spotTheDifference2b from "@assets/spot-the-difference-2b.png";
 const DIFFERENCES_1 = [
   {
     id: "turkey-drawing",
-    x: 0.1,
+    x: 0.105,
     y: 0.19,
-    aspectRatio: 1,
+    aspectRatio: 1.1,
   },
   {
     id: "drawer",
     x: 0.8,
     y: 0.31,
-    aspectRatio: 2,
+    aspectRatio: 1.5,
   },
   {
     id: "bed-sweater",
     x: 0.6,
     y: 0.48,
-    aspectRatio: 1.5,
+    aspectRatio: 0.8,
   },
   {
     id: "tissue-box",
     x: 0.075,
     y: 0.425,
-    aspectRatio: 1.2,
+    aspectRatio: 1,
   },
   {
     id: "sock",
     x: 0.79,
     y: 0.48,
-    aspectRatio: 0.8,
+    aspectRatio: 1.5,
   },
 ];
 
@@ -81,7 +81,7 @@ const DIFFERENCES_2 = [
     id: "coloring-book",
     x: 0.2,
     y: 0.74,
-    aspectRatio: 1,
+    aspectRatio: 0.9,
   },
   {
     id: "sweater-chair",
@@ -202,8 +202,12 @@ const SpotTheDifference = () => {
                       left: `${diff.x * 100}%`,
                       transform: "translate(-50%, -50%)",
                       border: `3px solid gold`,
-                      width: `${12 * diff.aspectRatio}%`,
-                      height: `${12}%`,
+                      width: `${
+                        diff.aspectRatio > 1 ? 12 * diff.aspectRatio : 12
+                      }%`,
+                      height: `${
+                        diff.aspectRatio > 1 ? 12 : 12 / diff.aspectRatio
+                      }%`,
                       boxShadow: 2,
                       borderRadius: "50%",
                     }}
