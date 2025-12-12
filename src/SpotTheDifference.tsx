@@ -12,12 +12,16 @@ import {
   Container,
 } from "@mui/material";
 import { ArrowBackRounded } from "@mui/icons-material";
+import Lottie from "lottie-react";
 
 import spotTheDifference1a from "@assets/spot-the-difference-1a.png";
 import spotTheDifference1b from "@assets/spot-the-difference-1b.png";
 
 import spotTheDifference2a from "@assets/spot-the-difference-2a.png";
 import spotTheDifference2b from "@assets/spot-the-difference-2b.png";
+
+// @ts-expect-error will fix later
+import confetti from "@assets/confetti.json";
 
 const DIFFERENCES_1 = [
   {
@@ -324,6 +328,17 @@ const SpotTheDifference = () => {
             boxShadow: `0 0 10px ${theme.palette.secondary.light}`,
           }}
         >
+          <Box
+            sx={{
+              position: "absolute",
+              width: "100%",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+            }}
+          >
+            <Lottie animationData={confetti} loop={false} />
+          </Box>
           <Typography
             id="modal-modal-title"
             variant="h6"
