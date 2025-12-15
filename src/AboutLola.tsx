@@ -257,8 +257,8 @@ const AboutLola = () => {
 
               {isSm ? (
                 <Typography>
-                  A story about feeling stuck, having someone there to help, and
-                  finding what was once lost.
+                  A story about feeling stuck in a mess, having someone there to
+                  help, and finding what was once lost.
                   <br />
                   <br />
                   💫
