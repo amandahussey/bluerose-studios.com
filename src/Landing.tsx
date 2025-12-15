@@ -20,12 +20,15 @@ const Landing = () => {
   const theme = useTheme();
 
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
-  const isMd = useMediaQuery(theme.breakpoints.up("md"));
+
+  const presentsSparklesBottomOffset = isSm ? "-10%" : "-60%";
 
   return (
     <Stack
       alignSelf="center"
       width="100%"
+      flexGrow={1}
+      justifyContent="center"
       pb={8}
       spacing={isSm ? 4 : 8}
       sx={{
@@ -33,27 +36,29 @@ const Landing = () => {
       }}
     >
       <Stack>
-        <Box sx={{ alignSelf: "center" }}>
-          <img
-            src={bluerose}
-            alt="blue rose"
-            style={{
-              height: 80,
-              objectFit: "contain",
-              padding: 12,
-            }}
-          />
-        </Box>
+        {!isSm && (
+          <Box sx={{ alignSelf: "center" }}>
+            <img
+              src={bluerose}
+              alt="blue rose"
+              style={{
+                height: 50,
+                objectFit: "contain",
+                padding: 4,
+              }}
+            />
+          </Box>
+        )}
 
-        <Stack direction="row" alignSelf="center">
+        <Stack direction="row" alignSelf="center" position="relative">
           <img
             src={sparkle1}
             style={{
               height: 10,
               objectFit: "contain",
-              position: "relative",
-              top: 72,
-              left: 32,
+              position: "absolute",
+              bottom: presentsSparklesBottomOffset,
+              left: "-18%",
             }}
           />
           <img
@@ -62,14 +67,13 @@ const Landing = () => {
               height: 30,
               objectFit: "contain",
               marginRight: 12,
-              position: "relative",
-              top: 74,
-              left: 34,
+              position: "absolute",
+              bottom: presentsSparklesBottomOffset,
+              left: "-15%",
             }}
           />
-          <Stack mb={2}>
+          <Stack>
             <Typography
-              variant="h5"
               textAlign="center"
               letterSpacing={4}
               fontFamily="American Typewriter"
@@ -77,33 +81,32 @@ const Landing = () => {
               blue rose studios
             </Typography>
             <Typography
-              variant="h6"
+              variant="subtitle2"
               textAlign="center"
-              letterSpacing={9}
+              letterSpacing={8}
               fontFamily="American Typewriter"
             >
               presents
             </Typography>
           </Stack>
-
-          <img
+          {/* <img
             src={sparkle1}
             style={{
               height: 14,
               objectFit: "contain",
-              position: "relative",
-              top: 65,
-              right: 32,
+              position: "absolute",
+              bottom: "-15%",
+              right: "0%",
             }}
-          />
+          /> */}
           <img
             src={sparkle1}
             style={{
               height: 30,
               objectFit: "contain",
-              position: "relative",
-              top: 72,
-              right: 32,
+              position: "absolute",
+              bottom: presentsSparklesBottomOffset,
+              right: "-10%",
             }}
           />
           <img
@@ -112,28 +115,39 @@ const Landing = () => {
               height: 10,
               objectFit: "contain",
               marginRight: 12,
-              position: "relative",
-              top: 60,
-              right: 34,
+              position: "absolute",
+              bottom: presentsSparklesBottomOffset,
+              right: "-18%",
             }}
           />
         </Stack>
       </Stack>
 
       <Stack>
-        <Box alignSelf="center">
+        <Box alignSelf="center" position="relative">
           {/* Lola Cover Sparkles */}
-          {isMd && (
+          {!isSm && (
             <>
+              <img
+                src={sparkle2}
+                style={{
+                  height: 30,
+                  objectFit: "contain",
+                  position: "absolute",
+                  zIndex: 100,
+                  left: "-22%",
+                  top: "10%",
+                }}
+              />
               <img
                 src={sparkle2}
                 style={{
                   height: 10,
                   objectFit: "contain",
-                  position: "relative",
+                  position: "absolute",
                   zIndex: 100,
-                  left: "-10%",
-                  bottom: 300,
+                  left: "-23%",
+                  bottom: "42%",
                 }}
               />
               <img
@@ -141,22 +155,10 @@ const Landing = () => {
                 style={{
                   height: 30,
                   objectFit: "contain",
-                  position: "relative",
+                  position: "absolute",
                   zIndex: 100,
-                  left: "-10%",
-                  bottom: 300,
-                }}
-              />
-
-              <img
-                src={sparkle2}
-                style={{
-                  height: 30,
-                  objectFit: "contain",
-                  position: "relative",
-                  zIndex: 100,
-                  left: "-20%",
-                  bottom: 350,
+                  left: "-18%",
+                  bottom: "35%",
                 }}
               />
             </>
@@ -167,8 +169,8 @@ const Landing = () => {
             src={lolaCover}
             alt="Lola and the Lost Ring"
             style={{
-              width: isSm ? "70vw" : "auto",
-              height: isSm ? "auto" : "40vh",
+              width: isSm ? "90vw" : "auto",
+              height: isSm ? "auto" : "50vh",
               objectFit: "contain",
               borderRadius: 6,
               boxShadow: `0px 0px ${isSm ? "20px" : "50px"} 6px ${
@@ -180,40 +182,53 @@ const Landing = () => {
           />
 
           {/* More Sparkles */}
-          {isMd && (
+          {!isSm && (
             <>
               <img
                 src={sparkle1}
                 style={{
-                  height: 10,
+                  height: 30,
                   objectFit: "contain",
-                  position: "relative",
+                  position: "absolute",
                   zIndex: 100,
-                  right: "-10%",
-                  bottom: 200,
+                  right: "-22%",
+                  top: "25%",
                 }}
               />
+
               <img
                 src={sparkle2}
                 style={{
                   height: 30,
                   objectFit: "contain",
-                  position: "relative",
+                  position: "absolute",
                   zIndex: 100,
-                  right: "-10%",
-                  bottom: 200,
+                  right: "-15%",
+                  bottom: "20%",
+                }}
+              />
+
+              <img
+                src={sparkle2}
+                style={{
+                  height: 10,
+                  objectFit: "contain",
+                  position: "absolute",
+                  zIndex: 100,
+                  right: "-18%",
+                  bottom: "30%",
                 }}
               />
 
               <img
                 src={sparkle1}
                 style={{
-                  height: 30,
+                  height: 10,
                   objectFit: "contain",
-                  position: "relative",
+                  position: "absolute",
                   zIndex: 100,
-                  right: "-12%",
-                  bottom: 250,
+                  right: "-20%",
+                  bottom: "18%",
                 }}
               />
             </>
