@@ -81,14 +81,15 @@ const AboutBlueRose = () => {
               <Stack spacing={1.5}>
                 <Typography variant="caption">
                   The name Blue Rose comes from a night in my childhood when I
-                  was feeling homesick, and my cousin told me a fairy named Blue
+                  was feeling homesick. My cousin told me a fairy named Blue
                   Rose was watching over me. I was shocked to see a blue light
-                  flicker across the room! It felt like magic.
+                  flicker across the room! It was so magical and comforting.
                 </Typography>
 
                 <Typography variant="caption">
                   I later learned there was a logical explanation. However, the
-                  magic stayed, and that feeling still lives on in my work.
+                  magic of the moment stuck with me, and it continues to live on
+                  in my work.
                 </Typography>
               </Stack>
 
