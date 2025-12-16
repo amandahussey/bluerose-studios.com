@@ -19,7 +19,6 @@ const AboutBlueRose = () => {
   return (
     <Stack
       p={4}
-      pb={8}
       flexGrow={1}
       justifyContent="center"
       style={{
