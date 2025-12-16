@@ -82,7 +82,7 @@ const AboutBlueRose = () => {
                   The name Blue Rose comes from a night in my childhood when I
                   was feeling homesick. My cousin told me a fairy named Blue
                   Rose was watching over me. I was shocked to see a blue light
-                  flicker across the room! It was so magical and comforting.
+                  flicker across the floor! It was so magical and comforting.
                 </Typography>
 
                 <Typography variant="caption">
