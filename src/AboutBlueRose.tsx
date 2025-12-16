@@ -68,7 +68,7 @@ const AboutBlueRose = () => {
             </Box>
 
             {/* Details */}
-            <Stack spacing={1}>
+            <Stack spacing={2}>
               <Stack spacing={2}>
                 <Typography>
                   I wrote <i>Lola and the Lost Ring</i> back in high school as a
@@ -80,7 +80,7 @@ const AboutBlueRose = () => {
                 <Typography>💫</Typography>
               </Stack>
 
-              <Stack spacing={1.5} pb={2}>
+              <Stack spacing={1.5}>
                 <Typography variant="caption">
                   The name Blue Rose comes from a night in my childhood when I
                   was feeling homesick, and my cousin told me a fairy named Blue
