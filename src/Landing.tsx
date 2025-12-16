@@ -169,7 +169,7 @@ const Landing = () => {
             src={lolaCover}
             alt="Lola and the Lost Ring"
             style={{
-              width: isSm ? "90vw" : "auto",
+              width: isSm ? "85vw" : "auto",
               height: isSm ? "auto" : "50vh",
               objectFit: "contain",
               borderRadius: 6,
