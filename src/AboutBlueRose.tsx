@@ -56,8 +56,7 @@ const AboutBlueRose = () => {
                 src={amanda}
                 alt="Image of Amanda, author of Blue Rose Studios books and games"
                 style={{
-                  width: isSm ? "50vw" : 150,
-                  maxWidth: 150,
+                  width: 150,
                   objectFit: "contain",
                   borderRadius: "50%",
                   boxShadow: `0 0 10px 4px ${theme.palette.secondary.main}`,
