@@ -14,7 +14,7 @@ const AboutBlueRose = () => {
 
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const textWraps = useMediaQuery(theme.breakpoints.down(473));
+  const textWraps = useMediaQuery(theme.breakpoints.down(540));
 
   return (
     <Stack
@@ -42,12 +42,11 @@ const AboutBlueRose = () => {
               </Typography>
 
               {/* Snippet */}
-              <Stack spacing={textWraps ? 2 : 0}>
-                <Typography>
-                  Author, illustrator, and software engineer
-                </Typography>
-                <Typography>behind Blue Rose Studios.</Typography>
-              </Stack>
+              <Typography>
+                Author, illustrator, and software engineer{" "}
+                {textWraps ? "" : <br />}
+                behind Blue Rose Studios.
+              </Typography>
             </Stack>
 
             {/* Image of me */}
