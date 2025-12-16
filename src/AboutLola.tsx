@@ -80,6 +80,9 @@ const AboutLola = () => {
     </Popover>
   );
 
+  const aStoryAboutText =
+    "A story about feeling stuck in a mess, having someone there to help, and finding what was once lost.";
+
   const bonusActivityText =
     "Bonus activity included at the end of the book that turns room cleaning into into a game of discovery!";
 
@@ -258,17 +261,13 @@ const AboutLola = () => {
 
               {isSm ? (
                 <Typography>
-                  A story about feeling stuck in a mess, having someone there to
-                  help, and finding what was once lost.
+                  {aStoryAboutText}
                   <br />
                   <br />
                   💫
                 </Typography>
               ) : (
-                <Typography>
-                  A story about feeling stuck, having someone there to help, and
-                  finding what was once lost.
-                </Typography>
+                <Typography>{aStoryAboutText}</Typography>
               )}
             </Stack>
 
