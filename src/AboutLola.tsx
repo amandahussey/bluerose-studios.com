@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Button,
   Stack,
@@ -35,10 +35,6 @@ const AboutLola = () => {
     setOpen(false);
     setCurrentActivityPage(activityPage1);
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [anchorElPopover, setAnchorElPopover] =
     useState<HTMLButtonElement | null>(null);

@@ -8,6 +8,7 @@ import AboutLola from "./AboutLola";
 import SpotTheDifference from "./SpotTheDifference";
 import Games from "./Games";
 import AboutBlueRose from "./AboutBlueRose";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           }}
         >
           <Nav />
+          <ScrollToTop />
           <Routes>
             <Route path="/books/lola" element={<AboutLola />} />
             <Route path="/games" element={<Games />} />
