@@ -90,7 +90,7 @@ const AboutBlueRose = () => {
 
                 <Typography variant="caption">
                   I later learned there was a logical explanation. However, the
-                  magic stayed, and that feeling still lives on in my world.
+                  magic stayed, and that feeling still lives on in my work.
                 </Typography>
               </Stack>
 
