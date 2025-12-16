@@ -43,10 +43,10 @@ const AboutBlueRose = () => {
 
               {/* Snippet */}
               <Stack spacing={textWraps ? 2 : 0}>
-                <Typography>Creator of Blue Rose Studios.</Typography>
                 <Typography>
-                  Author, illustrator, and software engineer.
+                  Author, illustrator, and software engineer
                 </Typography>
+                <Typography>behind Blue Rose Studios.</Typography>
               </Stack>
             </Stack>
 
