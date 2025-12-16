@@ -12,6 +12,8 @@ import amanda from "@assets/amanda.jpeg";
 const AboutBlueRose = () => {
   const theme = useTheme();
 
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
+
   const textWraps = useMediaQuery(theme.breakpoints.down(473));
 
   return (
@@ -21,7 +23,7 @@ const AboutBlueRose = () => {
       flexGrow={1}
       justifyContent="center"
       style={{
-        background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.secondary.main})`,
+        background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.secondary.dark})`,
       }}
     >
       <Container maxWidth="md">
@@ -55,22 +57,45 @@ const AboutBlueRose = () => {
                 src={amanda}
                 alt="Image of Amanda, author of Blue Rose Studios books and games"
                 style={{
-                  width: 180,
+                  width: isSm ? "50vw" : 150,
+                  maxWidth: 150,
                   objectFit: "contain",
                   borderRadius: "50%",
-                  boxShadow: `0 0 16px 4px ${theme.palette.secondary.light}`,
-                  border: `2px solid ${theme.palette.secondary.light}`,
+                  boxShadow: `0 0 10px 4px ${theme.palette.secondary.main}`,
+                  border: `2px solid ${theme.palette.secondary.main}`,
                 }}
               />
             </Box>
 
             {/* Details */}
-            <Typography>
-              Blue Rose Studios is where I create the stories and games that I
-              would like as a kid.
-            </Typography>
+            <Stack spacing={1}>
+              <Stack spacing={2}>
+                <Typography>
+                  I wrote <i>Lola and the Lost Ring</i> back in high school as a
+                  creative writing assignment.
+                </Typography>
+                <Typography>
+                  Fifteen years later, {isSm ? <br /> : ""}here we are!
+                </Typography>
+                <Typography>💫</Typography>
+              </Stack>
 
-            <Typography variant="h5">✨</Typography>
+              <Stack spacing={1.5} pb={2}>
+                <Typography variant="caption">
+                  The name Blue Rose comes from a night in my childhood when I
+                  was feeling homesick, and my cousin told me a fairy named Blue
+                  Rose was watching over me. I was shocked to see a blue light
+                  flicker across the room! It felt like magic.
+                </Typography>
+
+                <Typography variant="caption">
+                  I later learned there was a logical explanation. However, the
+                  magic stayed, and that feeling still lives on in my world.
+                </Typography>
+              </Stack>
+
+              <Typography>💙</Typography>
+            </Stack>
           </Stack>
         </Stack>
       </Container>
