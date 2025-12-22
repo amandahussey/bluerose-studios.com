@@ -11,7 +11,11 @@ import {
   Button,
   Container,
 } from "@mui/material";
-import { ArrowBackRounded } from "@mui/icons-material";
+import {
+  ArrowBackRounded,
+  ArrowForwardRounded,
+  RefreshRounded,
+} from "@mui/icons-material";
 import Lottie from "lottie-react";
 
 import spotTheDifference1a from "@assets/spot-the-difference-1a.png";
@@ -371,6 +375,7 @@ const SpotTheDifference = () => {
                   variant="contained"
                   color="secondary"
                   onClick={handleClose}
+                  endIcon={<ArrowForwardRounded />}
                 >
                   I'm ready!
                 </Button>
@@ -400,6 +405,7 @@ const SpotTheDifference = () => {
                   variant="contained"
                   color="secondary"
                   onClick={handleClose}
+                  startIcon={<RefreshRounded />}
                 >
                   Play Again!
                 </Button>
