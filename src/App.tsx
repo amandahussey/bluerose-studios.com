@@ -9,6 +9,7 @@ import SpotTheDifference from "./SpotTheDifference";
 import Games from "./Games";
 import AboutBlueRose from "./AboutBlueRose";
 import ScrollToTop from "./ScrollToTop";
+import ThankYou from "./ThankYou";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/books/lola" element={<AboutLola />} />
             <Route path="/games" element={<Games />} />
             <Route path="/about" element={<AboutBlueRose />} />
+            <Route path="/thank-you" element={<ThankYou />} />
             <Route
               path="/games/lola/spot-the-difference"
               element={<SpotTheDifference />}
