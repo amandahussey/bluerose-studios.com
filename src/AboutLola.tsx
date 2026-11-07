@@ -21,6 +21,7 @@ import {
 import lolaCover from "@assets/lola-cover.png";
 import activityPage1 from "@assets/activity-page-1.png";
 import activityPage2 from "@assets/activity-page-2.png";
+import { buyBookUrl } from "./links";
 
 const AboutLola = () => {
   const theme = useTheme();
@@ -34,9 +35,6 @@ const AboutLola = () => {
     setOpen(false);
     setCurrentActivityPage(activityPage1);
   };
-
-  const buyBookUrl =
-    "https://bluerose-studios.square.site/product/lola-and-the-lost-ring/OX5OWQEC2EVDOBNICF25Q7LR";
 
   const aStoryAboutText =
     "A story about feeling stuck in a mess, having someone there to help, and finding what was once lost.";
@@ -104,7 +102,7 @@ const AboutLola = () => {
                   spacing={2}
                   justifyContent={isSm ? "center" : "flex-start"}
                 >
-                  {/* Buy Book Button */}
+                  {/* Buy Now Button */}
                   <Button
                     variant="contained"
                     color="secondary"
@@ -113,7 +111,7 @@ const AboutLola = () => {
                     //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
                     // }}
                   >
-                    Buy Book
+                    Buy Now
                   </Button>
 
                   <Button
@@ -152,7 +150,7 @@ const AboutLola = () => {
                   //       }
                   // }
                 >
-                  Buy Book
+                  Buy Now
                 </Button>
 
                 <Button

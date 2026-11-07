@@ -1,18 +1,20 @@
 import {
+  alpha,
   Box,
   Button,
+  Link,
   Stack,
   Typography,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
 
-import { ArrowRightAltRounded } from "@mui/icons-material";
-
 import bluerose from "/blue-rose.png";
 import sparkle1 from "@assets/sparkle-1.png";
 import sparkle2 from "@assets/sparkle-2.png";
 import lolaCover from "@assets/lola-cover.png";
+
+import { buyBookUrl } from "./links";
 
 import "./Landing.css";
 
@@ -164,22 +166,34 @@ const Landing = () => {
             </>
           )}
 
-          {/* Lola Cover */}
-          <img
-            src={lolaCover}
-            alt="Lola and the Lost Ring"
-            style={{
-              width: isSm ? "85vw" : "auto",
-              height: isSm ? "auto" : "50vh",
-              objectFit: "contain",
-              borderRadius: 6,
-              boxShadow: `0px 0px ${isSm ? "20px" : "50px"} 6px ${
-                theme.palette.secondary.light
-              }`,
+          {/* Lola Cover (links to the About page) */}
+          <Box
+            component="a"
+            href="#/books/lola"
+            aria-label="About Lola and the Lost Ring"
+            sx={{
+              display: "block",
               position: "relative",
               zIndex: 99,
+              transition: "transform 0.25s ease",
+              "&:hover": { transform: "translateY(-4px)" },
             }}
-          />
+          >
+            <img
+              src={lolaCover}
+              alt="Lola and the Lost Ring"
+              style={{
+                display: "block",
+                width: isSm ? "85vw" : "auto",
+                height: isSm ? "auto" : "50vh",
+                objectFit: "contain",
+                borderRadius: 6,
+                boxShadow: `0px 0px ${isSm ? "20px" : "50px"} 6px ${
+                  theme.palette.secondary.light
+                }`,
+              }}
+            />
+          </Box>
 
           {/* More Sparkles */}
           {!isSm && (
@@ -245,34 +259,40 @@ const Landing = () => {
         </Box>
       </Stack>
 
-      <Stack
-        direction={{ xs: "column", sm: "row" }}
-        justifyContent="center"
-        alignItems="center"
-        spacing={isSm ? 3 : 4}
-      >
+      <Stack alignItems="center" spacing={2}>
+        {/* Main call to action: glowing gradient that echoes the cover's glow */}
         <Button
           variant="contained"
-          href="#/books/lola"
+          href={buyBookUrl}
           size="large"
-          style={{
-            background: `linear-gradient(to right, ${theme.palette.secondary.light} 5%, ${theme.palette.secondary.main})`,
+          sx={{
+            px: 6,
+            background: `linear-gradient(to right, ${theme.palette.secondary.light}, ${theme.palette.primary.light})`,
+            boxShadow: `0px 0px 20px 2px ${alpha(
+              theme.palette.secondary.light,
+              0.7
+            )}`,
+            transition: "box-shadow 0.2s ease, transform 0.2s ease",
+            "&:hover": {
+              boxShadow: `0px 0px 32px 6px ${alpha(
+                theme.palette.secondary.light,
+                0.9
+              )}`,
+              transform: "translateY(-1px)",
+            },
           }}
         >
-          Read About the Book
+          Buy Now
         </Button>
 
-        <Button
-          variant="contained"
-          href="#/games"
-          size="large"
-          endIcon={<ArrowRightAltRounded />}
-          style={{
-            background: `linear-gradient(to right bottom, ${theme.palette.secondary.main} 30%, ${theme.palette.primary.light})`,
-          }}
+        <Link
+          href="#/books/lola"
+          variant="body2"
+          underline="hover"
+          sx={{ color: alpha(theme.palette.text.primary, 0.75) }}
         >
-          Play Games
-        </Button>
+          About the book
+        </Link>
       </Stack>
     </Stack>
   );

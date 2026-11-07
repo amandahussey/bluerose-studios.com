@@ -10,7 +10,7 @@ The website for Blue Rose Studios, home of the children's book **_Lola and the L
 | Route | File | What it is |
 | --- | --- | --- |
 | `#/` | `src/Home.tsx` | Landing page |
-| `#/books/lola` | `src/AboutLola.tsx` | Book page with **Buy Book** button and activity pages |
+| `#/books/lola` | `src/AboutLola.tsx` | Book page with **Buy Now** buttons and activity pages |
 | `#/games` | `src/Games.tsx` | Games index |
 | `#/games/lola/spot-the-difference` | `src/SpotTheDifference.tsx` | Spot the Difference game |
 | `#/about` | `src/AboutBlueRose.tsx` | About Blue Rose Studios |
@@ -59,7 +59,7 @@ Changes are usually live at www.bluerose-studios.com within a minute or two.
 
 ## Selling the book (Square)
 
-The **Buy Book** buttons link to the book's product page on the Square Online store. The link is `buyBookUrl` in `src/AboutLola.tsx`.
+The **Buy Now** buttons (landing page and book page) link to the book's product page on the Square Online store. The link is `buyBookUrl` in `src/links.ts`.
 
 Checkout is handled entirely by Square. Everything below is set up in the Square Dashboard, not in this repo:
 
