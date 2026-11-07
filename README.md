@@ -1,50 +1,81 @@
-# React + TypeScript + Vite
+# Blue Rose Studios
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The website for Blue Rose Studios, home of the children's book **_Lola and the Lost Ring_**, written and illustrated by Amanda Hussey.
 
-Currently, two official plugins are available:
+**Live site:** https://www.bluerose-studios.com
+**Store:** https://bluerose-studios.square.site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pages
 
-## Expanding the ESLint configuration
+| Route | File | What it is |
+| --- | --- | --- |
+| `#/` | `src/Home.tsx` | Landing page |
+| `#/books/lola` | `src/AboutLola.tsx` | Book page with **Buy Book** button and activity pages |
+| `#/games` | `src/Games.tsx` | Games index |
+| `#/games/lola/spot-the-difference` | `src/SpotTheDifference.tsx` | Spot the Difference game |
+| `#/about` | `src/AboutBlueRose.tsx` | About Blue Rose Studios |
+| `#/thank-you` | `src/ThankYou.tsx` | Order confirmation (not currently used; Square Online shows its own) |
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The site uses `HashRouter`, so every URL has a `#/` in it. That's what lets GitHub Pages serve any route without a server.
 
-- Configure the top-level `parserOptions` property like this:
+## Tech stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- React 18 + TypeScript, built with Vite
+- MUI (Material UI) for components and theming (`src/theme.ts`)
+- React Router (hash routing)
+- `lottie-react` for the confetti animation
+- Hosted on GitHub Pages with the custom domain `www.bluerose-studios.com`
+
+## Getting started
+
+Requires **Node 20** (Vite 6 won't run on Node 16). With nvm:
+
+```sh
+nvm use        # reads .nvmrc
+npm install
+npm run dev    # http://localhost:5173
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Scripts
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Type-check and build to `dist/` |
+| `npm run preview` | Serve the built `dist/` locally |
+| `npm run lint` | Run ESLint |
+| `npm run deploy` | Build, then publish `dist/` to the `gh-pages` branch |
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Deploying
+
+```sh
+nvm use
+npm run deploy
+```
+
+Changes are usually live at www.bluerose-studios.com within a minute or two.
+
+**Custom domain:** `public/CNAME` contains `www.bluerose-studios.com`. Vite copies it into every build, so the custom domain stays set after each deploy. Don't delete it.
+
+## Selling the book (Square)
+
+The **Buy Book** buttons link to the book's product page on the Square Online store. The link is `buyBookUrl` in `src/AboutLola.tsx`.
+
+Checkout is handled entirely by Square. Everything below is set up in the Square Dashboard, not in this repo:
+
+- **Sales tax:** automatic, destination-based for Colorado orders (Settings → Sales taxes → Shipping & non-physical tax overrides). Out-of-state orders aren't charged tax, and shipping isn't taxed.
+- **Shipping:** "US Shipping" profile (Settings → Fulfillment methods → Shipment): $5 for 1 book, $7 for 2–3, $10 for 4+.
+- **Inventory:** stock is tracked on the item in Items → Item library.
+- **Store editor:** square.online → Website → Editor. Click **Publish** after making changes.
+
+## Project structure
+
+```
+public/          Static files copied as-is (CNAME, favicon)
+src/
+  assets/        Images, book cover, activity pages, Lottie JSON
+  App.tsx        Routes
+  Nav.tsx        Top navigation
+  theme.ts       MUI theme (colors, typography)
+  *.tsx          One file per page
 ```
