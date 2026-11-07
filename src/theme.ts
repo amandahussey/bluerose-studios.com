@@ -1,5 +1,9 @@
 import { createTheme } from "@mui/material/styles";
 
+// "blue rose studios" wordmark font. Cutive (Google Fonts, loaded in index.html)
+// is a typewriter-style face that looks the same on every OS.
+export const typewriterFont = ["Cutive", '"American Typewriter"', "serif"].join(",");
+
 export const theme = createTheme({
   palette: {
     mode: "dark",

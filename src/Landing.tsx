@@ -19,7 +19,7 @@ import lolaCover from "@assets/lola-cover.png";
 import { keyframes } from "@emotion/react";
 
 import { buyBookUrl } from "./links";
-import { theme as appTheme } from "./theme";
+import { theme as appTheme, typewriterFont } from "./theme";
 
 import "./Landing.css";
 
@@ -180,16 +180,18 @@ const Landing = () => {
           >
             <Typography
               textAlign="center"
-              letterSpacing={4}
-              fontFamily="American Typewriter"
+              letterSpacing={2}
+              fontSize="18px"
+              fontFamily={typewriterFont}
             >
               blue rose studios
             </Typography>
             <Typography
               variant="subtitle2"
               textAlign="center"
-              letterSpacing={8}
-              fontFamily="American Typewriter"
+              letterSpacing={6}
+              fontSize="16px"
+              fontFamily={typewriterFont}
             >
               presents
             </Typography>

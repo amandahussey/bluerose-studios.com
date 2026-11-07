@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { Instagram } from "@mui/icons-material";
 import bluerose from "/blue-rose.png";
+import { typewriterFont } from "./theme";
 
 function Nav() {
   const [anchorElBooks, setAnchorElBooks] = React.useState<null | HTMLElement>(
@@ -62,9 +63,10 @@ function Nav() {
                 href="/"
                 sx={{
                   mr: 2,
-                  fontFamily: "American Typewriter",
+                  fontFamily: typewriterFont,
+                  fontSize: "22px",
                   fontWeight: 400,
-                  letterSpacing: ".3rem",
+                  letterSpacing: ".15rem",
                   color: "inherit",
                   textDecoration: "none",
                 }}
