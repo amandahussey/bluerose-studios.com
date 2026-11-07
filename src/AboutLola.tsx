@@ -9,7 +9,6 @@ import {
   Box,
   Modal,
   IconButton,
-  Popover,
 } from "@mui/material";
 import {
   ArrowBackIosRounded,
@@ -36,45 +35,8 @@ const AboutLola = () => {
     setCurrentActivityPage(activityPage1);
   };
 
-  const [anchorElPopover, setAnchorElPopover] =
-    useState<HTMLButtonElement | null>(null);
-
-  const handleClickPopover = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorElPopover(event.currentTarget);
-  };
-
-  const handleClosePopover = () => {
-    setAnchorElPopover(null);
-  };
-
-  const popoverIsOpen = Boolean(anchorElPopover);
-  const popoverId = popoverIsOpen ? "simple-popover" : undefined;
-
-  const comingSoonPopover = (
-    <Popover
-      id={popoverId}
-      open={popoverIsOpen}
-      anchorEl={anchorElPopover}
-      onClose={handleClosePopover}
-      anchorOrigin={{
-        vertical: isSm ? "top" : "bottom",
-        horizontal: "left",
-      }}
-      transformOrigin={{
-        vertical: isSm ? "bottom" : "top",
-        horizontal: "left",
-      }}
-      slotProps={{
-        paper: {
-          sx: {
-            backgroundColor: theme.palette.secondary.main,
-          },
-        },
-      }}
-    >
-      <Typography sx={{ py: 1, px: 2 }}>Coming soon!</Typography>
-    </Popover>
-  );
+  const buyBookUrl =
+    "https://bluerose-studios.square.site/product/lola-and-the-lost-ring/OX5OWQEC2EVDOBNICF25Q7LR";
 
   const aStoryAboutText =
     "A story about feeling stuck in a mess, having someone there to help, and finding what was once lost.";
@@ -146,17 +108,13 @@ const AboutLola = () => {
                   <Button
                     variant="contained"
                     color="secondary"
-                    aria-describedby={popoverId}
-                    onClick={handleClickPopover}
+                    href={buyBookUrl}
                     // style={{
                     //   background: `linear-gradient(to right, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
                     // }}
                   >
                     Buy Book
                   </Button>
-
-                  {/* Coming soon! Popover */}
-                  {comingSoonPopover}
 
                   <Button
                     variant="contained"
@@ -185,7 +143,7 @@ const AboutLola = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  onClick={handleClickPopover}
+                  href={buyBookUrl}
                   // style={
                   //   !isSm
                   //     ? {}
@@ -196,9 +154,6 @@ const AboutLola = () => {
                 >
                   Buy Book
                 </Button>
-
-                {/* Coming soon! Popover */}
-                {comingSoonPopover}
 
                 <Button
                   variant="contained"
