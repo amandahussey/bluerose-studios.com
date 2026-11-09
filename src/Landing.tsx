@@ -23,8 +23,8 @@ import { theme as appTheme, typewriterFont } from "./theme";
 import "./Landing.css";
 
 // ---------- Landing animations ----------
-// Timeline on load: header (0s) -> book, glow and sparkles land together (0.5-1.4s)
-// -> Buy Now (1.1s) -> ambient loops.
+// Timeline on load: header (0-1s) -> pause -> book, glow and sparkles land together (1.2-2.1s)
+// -> Buy Now (1.8s) -> ambient loops.
 
 const fadeDown = keyframes`
   from { opacity: 0; transform: translateY(-12px); }
@@ -163,14 +163,14 @@ const Landing = () => {
           <Sparkle
             src={sparkle1}
             height={10}
-            delay={0.55}
+            delay={1.25}
             twinkle={2.6}
             sx={{ bottom: presentsSparklesBottomOffset, left: "-18%" }}
           />
           <Sparkle
             src={sparkle2}
             height={30}
-            delay={0.5}
+            delay={1.2}
             twinkle={3.4}
             sx={{ bottom: presentsSparklesBottomOffset, left: "-15%" }}
           />
@@ -198,14 +198,14 @@ const Landing = () => {
           <Sparkle
             src={sparkle1}
             height={30}
-            delay={0.6}
+            delay={1.3}
             twinkle={3.1}
             sx={{ bottom: presentsSparklesBottomOffset, right: "-10%" }}
           />
           <Sparkle
             src={sparkle2}
             height={10}
-            delay={0.7}
+            delay={1.4}
             twinkle={2.3}
             sx={{ bottom: presentsSparklesBottomOffset, right: "-18%" }}
           />
@@ -220,21 +220,21 @@ const Landing = () => {
               <Sparkle
                 src={sparkle2}
                 height={30}
-                delay={0.5}
+                delay={1.2}
                 twinkle={3.6}
                 sx={{ left: "-22%", top: "10%" }}
               />
               <Sparkle
                 src={sparkle2}
                 height={10}
-                delay={0.75}
+                delay={1.45}
                 twinkle={2.4}
                 sx={{ left: "-23%", bottom: "42%" }}
               />
               <Sparkle
                 src={sparkle1}
                 height={30}
-                delay={0.65}
+                delay={1.35}
                 twinkle={3.0}
                 sx={{ left: "-18%", bottom: "35%" }}
               />
@@ -250,7 +250,7 @@ const Landing = () => {
               display: "block",
               position: "relative",
               zIndex: 99,
-              animation: `${bookRise} 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s backwards`,
+              animation: `${bookRise} 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s backwards`,
               transition: "transform 0.25s ease",
               "&:hover": { transform: "translateY(-4px)" },
             }}
@@ -268,7 +268,7 @@ const Landing = () => {
                 boxShadow: `0px 0px ${isSm ? "20px" : "50px"} 6px ${
                   theme.palette.secondary.light
                 }`,
-                animation: `${glow.in} 0.9s ease-out 0.5s backwards, ${glow.breathe} 5s ease-in-out 1.4s infinite`,
+                animation: `${glow.in} 0.9s ease-out 1.2s backwards, ${glow.breathe} 5s ease-in-out 2.1s infinite`,
               }}
             />
           </Box>
@@ -279,28 +279,28 @@ const Landing = () => {
               <Sparkle
                 src={sparkle1}
                 height={30}
-                delay={0.55}
+                delay={1.25}
                 twinkle={3.3}
                 sx={{ right: "-22%", top: "25%" }}
               />
               <Sparkle
                 src={sparkle2}
                 height={30}
-                delay={0.7}
+                delay={1.4}
                 twinkle={2.8}
                 sx={{ right: "-15%", bottom: "20%" }}
               />
               <Sparkle
                 src={sparkle2}
                 height={10}
-                delay={0.8}
+                delay={1.5}
                 twinkle={2.2}
                 sx={{ right: "-18%", bottom: "30%" }}
               />
               <Sparkle
                 src={sparkle1}
                 height={10}
-                delay={0.85}
+                delay={1.55}
                 twinkle={3.8}
                 sx={{ right: "-20%", bottom: "18%" }}
               />
@@ -310,7 +310,7 @@ const Landing = () => {
         <Box
           sx={{
             display: { xs: "none", md: "block" },
-            animation: `${fadeIn} 0.6s ease-out 0.4s backwards`,
+            animation: `${fadeIn} 0.6s ease-out 1.1s backwards`,
           }}
         >
           <div className="shelf">
@@ -326,7 +326,7 @@ const Landing = () => {
       <Stack
         alignItems="center"
         spacing={2}
-        sx={{ animation: `${fadeUp} 0.7s ease-out 1.1s backwards` }}
+        sx={{ animation: `${fadeUp} 0.7s ease-out 1.8s backwards` }}
       >
         {/* Main call to action: crisp gradient with a periodic shimmer + twinkling sparkle */}
         <Box sx={{ position: "relative" }}>
@@ -352,7 +352,7 @@ const Landing = () => {
                 background:
                   "linear-gradient(110deg, transparent, rgba(255,255,255,0.45), transparent)",
                 transform: "translateX(-150%)",
-                animation: `${shimmer} 4s ease-in-out 2s infinite`,
+                animation: `${shimmer} 4s ease-in-out 2.7s infinite`,
                 pointerEvents: "none",
               },
               "@media (prefers-reduced-motion: reduce)": {
@@ -376,7 +376,7 @@ const Landing = () => {
               height: 22,
               pointerEvents: "none",
               opacity: 0,
-              animation: `${buttonTwinkle} 4s ease-in-out 2s infinite`,
+              animation: `${buttonTwinkle} 4s ease-in-out 2.7s infinite`,
               "@media (prefers-reduced-motion: reduce)": {
                 animation: "none",
                 opacity: 1,
