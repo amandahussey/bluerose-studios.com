@@ -1,5 +1,4 @@
 import {
-  alpha,
   Box,
   SxProps,
   Theme,
@@ -390,7 +389,7 @@ const Landing = () => {
           href="#/books/lola"
           variant="body2"
           underline="hover"
-          sx={{ color: alpha(theme.palette.text.primary, 0.75) }}
+          sx={{ color: "common.white" }}
         >
           About the book
         </Link>
