@@ -352,7 +352,7 @@ const Landing = () => {
                 background:
                   "linear-gradient(110deg, transparent, rgba(255,255,255,0.45), transparent)",
                 transform: "translateX(-150%)",
-                animation: `${shimmer} 4s ease-in-out 2.7s infinite`,
+                animation: `${shimmer} 4s ease-in-out 1.85s infinite`,
                 pointerEvents: "none",
               },
               "@media (prefers-reduced-motion: reduce)": {
@@ -376,7 +376,7 @@ const Landing = () => {
               height: 22,
               pointerEvents: "none",
               opacity: 0,
-              animation: `${buttonTwinkle} 4s ease-in-out 2.7s infinite`,
+              animation: `${buttonTwinkle} 4s ease-in-out 1.85s infinite`,
               "@media (prefers-reduced-motion: reduce)": {
                 animation: "none",
                 opacity: 1,
